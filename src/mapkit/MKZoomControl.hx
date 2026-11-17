@@ -7,16 +7,27 @@ import foundation.NSCoder;
 import uikit.UITraitCollection;
 import uikit.UIView;
 
-@:hxmc.framework("MapKit") @:hxmc.objc extern class MKZoomControl extends UIView {
+@:hxmc.framework("MapKit") @:hxmc.objc @:hxmc.available(macos >= 11.0) extern class MKZoomControl extends UIView {
+	@:hxmc.available(macos >= 11.0)
 	static function alloc():MKZoomControl;
+	@:hxmc.available(macos >= 11.0)
 	static function appearance():MKZoomControl;
+	@:hxmc.available(macos >= 11.0)
 	static overload function appearanceForTraitCollection(trait:UITraitCollection):MKZoomControl;
+	@:hxmc.available(macos >= 11.0)
 	static function appearanceWhenContainedInInstancesOfClasses(containerTypes:NSArray):MKZoomControl;
+	@:hxmc.available(macos >= 11.0)
 	var mapView(get, set) : Null<MKMapView>;
+	@:hxmc.available(macos >= 11.0)
 	function get_mapView():Null<MKMapView>;
+	@:hxmc.available(macos >= 11.0)
 	function set_mapView(v:Null<MKMapView>):Null<MKMapView>;
+	@:hxmc.available(macos >= 11.0)
 	static function zoomControlWithMapView(mapView:Null<MKMapView>):MKZoomControl;
+	@:hxmc.available(macos >= 11.0)
 	override function init():MKZoomControl;
+	@:hxmc.available(macos >= 11.0)
 	override function initWithCoder(coder:NSCoder):Null<MKZoomControl>;
+	@:hxmc.available(macos >= 11.0)
 	override function initWithFrame(frame:CGRect):MKZoomControl;
 }

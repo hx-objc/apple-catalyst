@@ -11,6 +11,7 @@ import hxmc.unsafe.Ptr;
 	public var DlDbHandle : Cssm_dl_db_handle;
 	public var UniqueRecord : Ptr;
 	public var CrlReason : Int;
+	@:hxmc.unsafe
 	public inline function new(StatusBits:Int, NumStatusCodes:Int, StatusCodes:Ptr, Index:Int, DlDbHandle:Cssm_dl_db_handle, UniqueRecord:Ptr, CrlReason:Int) {
 		this.StatusBits = StatusBits;
 		this.NumStatusCodes = NumStatusCodes;

@@ -7,6 +7,7 @@ enum abstract PHCollectionListSubtype(I64) to I64 {
 	var MomentListCluster = 1;
 	var MomentListYear = 2;
 	var RegularFolder = 100;
+	@:hxmc.available(macos >= 27, ios >= 27, maccatalyst >= 27)
 	var RootFolder = 101;
 	var SmartFolderEvents = 200;
 	var SmartFolderFaces = 201;

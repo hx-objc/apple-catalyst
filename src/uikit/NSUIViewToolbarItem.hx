@@ -4,16 +4,24 @@ package uikit;
 import appkit.NSToolbarItem;
 import foundation.NSStringArg;
 
-@:hxmc.framework("UIKit") @:hxmc.objc extern class NSUIViewToolbarItem extends NSToolbarItem {
+@:hxmc.framework("UIKit") @:hxmc.objc @:hxmc.available(maccatalyst >= 16.0) extern class NSUIViewToolbarItem extends NSToolbarItem {
+	@:hxmc.available(maccatalyst >= 16.0)
 	static function alloc():NSUIViewToolbarItem;
 	@:hxmc.framework("UIKit")
+	@:hxmc.available(maccatalyst >= 16.0)
 	static function itemWithItemIdentifier(itemIdentifier:NSStringArg, barButtonItem:UIBarButtonItem):NSUIViewToolbarItem;
+	@:hxmc.available(maccatalyst >= 16.0)
 	var uiView(get, set) : UIView;
+	@:hxmc.available(maccatalyst >= 16.0)
 	function get_uiView():UIView;
 	@:selector("setUIView:")
+	@:hxmc.available(maccatalyst >= 16.0)
 	function set_uiView(v:UIView):UIView;
 	@:selector("initWithItemIdentifier:uiView:")
+	@:hxmc.available(maccatalyst >= 16.0)
 	function initWithItemIdentifierUiView(identifier:NSStringArg, uiView:UIView):NSUIViewToolbarItem;
+	@:hxmc.available(maccatalyst >= 16.0)
 	override function init():NSUIViewToolbarItem;
+	@:hxmc.available(maccatalyst >= 16.0)
 	override function initWithItemIdentifier(itemIdentifier:NSStringArg):NSUIViewToolbarItem;
 }

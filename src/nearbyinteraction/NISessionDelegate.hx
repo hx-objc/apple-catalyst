@@ -24,8 +24,10 @@ import objc.NSObjectProtocol;
 	@:optional
 	function sessionDidGenerateShareableConfigurationDataForObject(session:NISession, didGenerateShareableConfigurationData:NSData, forObject:NINearbyObject):Void;
 	@:selector("session:didUpdateAlgorithmConvergence:forObject:")
+	@:hxmc.available(ios >= 16.0, maccatalyst >= 16.0)
 	@:optional
 	function sessionDidUpdateAlgorithmConvergenceForObject(session:NISession, didUpdateAlgorithmConvergence:NIAlgorithmConvergence, forObject:Null<NINearbyObject>):Void;
+	@:hxmc.available(ios >= 16.0, maccatalyst >= 16.0)
 	@:optional
 	function sessionDidStartRunning(session:NISession):Void;
 }

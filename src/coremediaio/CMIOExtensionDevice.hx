@@ -9,23 +9,41 @@ import foundation.NSUUID;
 import hxmc.unsafe.Ptr;
 import objc.NSObject;
 
-@:hxmc.framework("CoreMediaIO") @:hxmc.objc extern class CMIOExtensionDevice extends NSObject {
+@:hxmc.framework("CoreMediaIO") @:hxmc.objc @:hxmc.available(macos >= 12.3, maccatalyst >= 15.4) extern class CMIOExtensionDevice extends NSObject {
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	static function alloc():CMIOExtensionDevice;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	var localizedName(get, never) : NSStringArg;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	function get_localizedName():NSStringArg;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	var deviceID(get, never) : NSUUID;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	function get_deviceID():NSUUID;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	var legacyDeviceID(get, never) : NSStringArg;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	function get_legacyDeviceID():NSStringArg;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	var source(get, never) : Null<CMIOExtensionDeviceSource>;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	function get_source():Null<CMIOExtensionDeviceSource>;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	var streams(get, never) : NSArray<CMIOExtensionStream>;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	function get_streams():NSArray<CMIOExtensionStream>;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	static overload function deviceWithLocalizedName(localizedName:NSStringArg, deviceID:NSUUID, legacyDeviceID:Null<NSStringArg>, source:CMIOExtensionDeviceSource):CMIOExtensionDevice;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	overload function initWithLocalizedName(localizedName:NSStringArg, deviceID:NSUUID, legacyDeviceID:Null<NSStringArg>, source:CMIOExtensionDeviceSource):CMIOExtensionDevice;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	static overload function deviceWithLocalizedName(localizedName:NSStringArg, deviceID:NSUUID, source:CMIOExtensionDeviceSource):CMIOExtensionDevice;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	overload function initWithLocalizedName(localizedName:NSStringArg, deviceID:NSUUID, source:CMIOExtensionDeviceSource):CMIOExtensionDevice;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	function addStream(stream:CMIOExtensionStream, error:Ptr):Bool;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	function removeStream(stream:CMIOExtensionStream, error:Ptr):Bool;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	function notifyPropertiesChanged(propertyStates:NSDictionary<NSString, CMIOExtensionPropertyState>):Void;
 }

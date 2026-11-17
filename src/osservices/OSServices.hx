@@ -7,6 +7,7 @@ import foundation.NSData;
 import foundation.NSString;
 import foundation.NSStringArg;
 import hxmc.I64;
+import hxmc.ReadOnlySpan;
 import hxmc.unsafe.Ptr;
 
 @:hxmc.c @:hxmc.lib("/System/Library/Frameworks/CoreServices.framework/Frameworks/OSServices.framework/OSServices") extern class OSServices {
@@ -18,7 +19,8 @@ import hxmc.unsafe.Ptr;
 	public static function CSIdentityQueryCreateForName(allocator:CFAllocator, name:NSStringArg, comparisonMethod:I64, identityClass:I64, authority:Ptr):Ptr;
 	public static function CSIdentityQueryCreateForPersistentReference(allocator:CFAllocator, referenceData:NSData):Ptr;
 	public static function CSIdentityQueryExecute(query:Ptr, flags:I64, error:Ptr):Bool;
-	public static function CSIdentityQueryExecuteAsynchronously(query:Ptr, flags:I64, clientContext:Ptr, runLoop:CFRunLoop, runLoopMode:NSStringArg):Bool;
+	@:hxmc.len(clientContext, 1)
+	public static function CSIdentityQueryExecuteAsynchronously(query:Ptr, flags:I64, clientContext:ReadOnlySpan<CSIdentityQueryClientContext>, runLoop:CFRunLoop, runLoopMode:NSStringArg):Bool;
 	public static function CSIdentityQueryGetTypeID():I64;
 	public static function CSIdentityQueryStop(query:Ptr):Void;
 	public static final kCSIdentityErrorDomain : NSString;

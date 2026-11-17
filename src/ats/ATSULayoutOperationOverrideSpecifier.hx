@@ -6,6 +6,7 @@ import hxmc.unsafe.Ptr;
 @:hxmc.struct class ATSULayoutOperationOverrideSpecifier {
 	public var operationSelector : Int;
 	public var overrideUPP : Ptr;
+	@:hxmc.unsafe
 	public inline function new(operationSelector:Int, overrideUPP:Ptr) {
 		this.operationSelector = operationSelector;
 		this.overrideUPP = overrideUPP;

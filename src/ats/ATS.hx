@@ -4,19 +4,21 @@ package ats;
 import foundation.NSStringArg;
 import foundation.NSURL;
 import hxmc.I64;
+import hxmc.Span;
 import hxmc.unsafe.Ptr;
 
 @:hxmc.c @:hxmc.lib("/System/Library/Frameworks/ApplicationServices.framework/Frameworks/ATS.framework/ATS") extern class ATS {
 	@:deprecated
-	public static function ATSFontActivateFromFileReference(iFile:Ptr, iContext:Int, iFormat:Int, iRefCon:Ptr, iOptions:Int, oContainer:Ptr):Int;
+	@:hxmc.len(oContainer, 1)
+	public static function ATSFontActivateFromFileReference(iFile:Ptr, iContext:Int, iFormat:Int, iRefCon:Ptr, iOptions:Int, oContainer:Span<Int>):Int;
 	@:deprecated
 	public static function ATSFontActivateFromMemory(iData:Ptr, iLength:I64, iContext:Int, iFormat:Int, iReserved:Ptr, iOptions:Int, oContainer:Ptr):Int;
 	@:deprecated
-	public static function ATSFontApplyFunction(iFunction:Ptr, iRefCon:Ptr):Int;
+	public static function ATSFontApplyFunction(iFunction:(Int, Ptr) -> Int, iRefCon:Ptr):Int;
 	@:deprecated
 	public static function ATSFontDeactivate(iContainer:Int, iRefCon:Ptr, iOptions:Int):Int;
 	@:deprecated
-	public static function ATSFontFamilyApplyFunction(iFunction:Ptr, iRefCon:Ptr):Int;
+	public static function ATSFontFamilyApplyFunction(iFunction:(Int, Ptr) -> Int, iRefCon:Ptr):Int;
 	@:deprecated
 	public static function ATSFontFamilyFindFromName(iName:NSStringArg, iOptions:Int):Int;
 	@:deprecated
@@ -32,7 +34,8 @@ import hxmc.unsafe.Ptr;
 	@:deprecated
 	public static function ATSFontFamilyIteratorCreate(iContext:Int, iFilter:Ptr, iRefCon:Ptr, iOptions:Int, ioIterator:Ptr):Int;
 	@:deprecated
-	public static function ATSFontFamilyIteratorNext(iIterator:Ptr, oFamily:Ptr):Int;
+	@:hxmc.len(oFamily, 1)
+	public static function ATSFontFamilyIteratorNext(iIterator:Ptr, oFamily:Span<Int>):Int;
 	@:deprecated
 	public static function ATSFontFamilyIteratorRelease(ioIterator:Ptr):Int;
 	@:deprecated
@@ -46,9 +49,11 @@ import hxmc.unsafe.Ptr;
 	@:deprecated
 	public static function ATSFontGetAutoActivationSettingForApplication(iApplicationFileURL:NSURL):Int;
 	@:deprecated
-	public static function ATSFontGetContainer(iFont:Int, iOptions:Int, oContainer:Ptr):Int;
+	@:hxmc.len(oContainer, 1)
+	public static function ATSFontGetContainer(iFont:Int, iOptions:Int, oContainer:Span<Int>):Int;
 	@:deprecated
-	public static function ATSFontGetContainerFromFileReference(iFile:Ptr, iContext:Int, iOptions:Int, oContainer:Ptr):Int;
+	@:hxmc.len(oContainer, 1)
+	public static function ATSFontGetContainerFromFileReference(iFile:Ptr, iContext:Int, iOptions:Int, oContainer:Span<Int>):Int;
 	@:deprecated
 	public static function ATSFontGetFileReference(iFont:Int, oFile:Ptr):Int;
 	@:deprecated
@@ -74,13 +79,14 @@ import hxmc.unsafe.Ptr;
 	@:deprecated
 	public static function ATSFontIteratorCreate(iContext:Int, iFilter:Ptr, iRefCon:Ptr, iOptions:Int, ioIterator:Ptr):Int;
 	@:deprecated
-	public static function ATSFontIteratorNext(iIterator:Ptr, oFont:Ptr):Int;
+	@:hxmc.len(oFont, 1)
+	public static function ATSFontIteratorNext(iIterator:Ptr, oFont:Span<Int>):Int;
 	@:deprecated
 	public static function ATSFontIteratorRelease(ioIterator:Ptr):Int;
 	@:deprecated
 	public static function ATSFontIteratorReset(iContext:Int, iFilter:Ptr, iRefCon:Ptr, iOptions:Int, ioIterator:Ptr):Int;
 	@:deprecated
-	public static function ATSFontNotificationSubscribe(callback:Ptr, options:ATSFontNotifyOption, iRefcon:Ptr, oNotificationRef:Ptr):Int;
+	public static function ATSFontNotificationSubscribe(callback:(Ptr, Ptr) -> Void, options:ATSFontNotifyOption, iRefcon:Ptr, oNotificationRef:Ptr):Int;
 	@:deprecated
 	public static function ATSFontNotificationUnsubscribe(notificationRef:Ptr):Int;
 	@:deprecated

@@ -23,11 +23,17 @@ import objc.NSObject;
 	function get_options():NSDictionary<NSString, Id>;
 	var canProvidePersistableContentKey(get, never) : Bool;
 	function get_canProvidePersistableContentKey():Bool;
+	@:hxmc.available(macos >= 11.3)
 	var contentKeySpecifier(get, never) : AVContentKeySpecifier;
+	@:hxmc.available(macos >= 11.3)
 	function get_contentKeySpecifier():AVContentKeySpecifier;
+	@:hxmc.available(macos >= 11.3)
 	var contentKey(get, never) : Null<AVContentKey>;
+	@:hxmc.available(macos >= 11.3)
 	function get_contentKey():Null<AVContentKey>;
+	@:hxmc.available(macos >= 26.0, ios >= 26.0, maccatalyst >= 26.0)
 	var originatingRecipient(get, never) : Null<AVContentKeyRecipient>;
+	@:hxmc.available(macos >= 26.0, ios >= 26.0, maccatalyst >= 26.0)
 	function get_originatingRecipient():Null<AVContentKeyRecipient>;
 	var renewsExpiringResponseData(get, never) : Bool;
 	function get_renewsExpiringResponseData():Bool;

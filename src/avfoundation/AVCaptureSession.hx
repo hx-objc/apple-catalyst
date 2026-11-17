@@ -19,15 +19,25 @@ import objc.NSObject;
 	function get_outputs():NSArray<AVCaptureOutput>;
 	var connections(get, never) : NSArray<AVCaptureConnection>;
 	function get_connections():NSArray<AVCaptureConnection>;
+	@:hxmc.available(macos >= 15.0, ios >= 18.0, maccatalyst >= 18.0)
 	var supportsControls(get, never) : Bool;
+	@:hxmc.available(macos >= 15.0, ios >= 18.0, maccatalyst >= 18.0)
 	function get_supportsControls():Bool;
+	@:hxmc.available(macos >= 15.0, ios >= 18.0, maccatalyst >= 18.0)
 	var maxControlsCount(get, never) : I64;
+	@:hxmc.available(macos >= 15.0, ios >= 18.0, maccatalyst >= 18.0)
 	function get_maxControlsCount():I64;
+	@:hxmc.available(macos >= 15.0, ios >= 18.0, maccatalyst >= 18.0)
 	var controlsDelegate(get, never) : Null<AVCaptureSessionControlsDelegate>;
+	@:hxmc.available(macos >= 15.0, ios >= 18.0, maccatalyst >= 18.0)
 	function get_controlsDelegate():Null<AVCaptureSessionControlsDelegate>;
+	@:hxmc.available(macos >= 15.0, ios >= 18.0, maccatalyst >= 18.0)
 	var controlsDelegateCallbackQueue(get, never) : Null<NSObject>;
+	@:hxmc.available(macos >= 15.0, ios >= 18.0, maccatalyst >= 18.0)
 	function get_controlsDelegateCallbackQueue():Null<NSObject>;
+	@:hxmc.available(macos >= 15.0, ios >= 18.0, maccatalyst >= 18.0)
 	var controls(get, never) : NSArray<AVCaptureControl>;
+	@:hxmc.available(macos >= 15.0, ios >= 18.0, maccatalyst >= 18.0)
 	function get_controls():NSArray<AVCaptureControl>;
 	var running(get, never) : Bool;
 	@:selector("isRunning")
@@ -41,28 +51,44 @@ import objc.NSObject;
 	var automaticallyConfiguresApplicationAudioSession(get, set) : Bool;
 	function get_automaticallyConfiguresApplicationAudioSession():Bool;
 	function set_automaticallyConfiguresApplicationAudioSession(v:Bool):Bool;
+	@:hxmc.available(ios >= 18.0, maccatalyst >= 18.0)
 	var configuresApplicationAudioSessionToMixWithOthers(get, set) : Bool;
+	@:hxmc.available(ios >= 18.0, maccatalyst >= 18.0)
 	function get_configuresApplicationAudioSessionToMixWithOthers():Bool;
+	@:hxmc.available(ios >= 18.0, maccatalyst >= 18.0)
 	function set_configuresApplicationAudioSessionToMixWithOthers(v:Bool):Bool;
 	var automaticallyConfiguresCaptureDeviceForWideColor(get, set) : Bool;
 	function get_automaticallyConfiguresCaptureDeviceForWideColor():Bool;
 	function set_automaticallyConfiguresCaptureDeviceForWideColor(v:Bool):Bool;
+	@:hxmc.available(macos >= 12.3, ios >= 15.4, maccatalyst >= 15.4)
 	var synchronizationClock(get, never) : Null<CMClock>;
+	@:hxmc.available(macos >= 12.3, ios >= 15.4, maccatalyst >= 15.4)
 	function get_synchronizationClock():Null<CMClock>;
 	@:deprecated
 	var masterClock(get, never) : Null<CMClock>;
 	function get_masterClock():Null<CMClock>;
+	@:hxmc.available(ios >= 16.0, maccatalyst >= 16.0)
 	var hardwareCost(get, never) : Float32;
+	@:hxmc.available(ios >= 16.0, maccatalyst >= 16.0)
 	function get_hardwareCost():Float32;
+	@:hxmc.available(macos >= 26.0, ios >= 26.0, maccatalyst >= 26.0)
 	var manualDeferredStartSupported(get, never) : Bool;
 	@:selector("isManualDeferredStartSupported")
+	@:hxmc.available(macos >= 26.0, ios >= 26.0, maccatalyst >= 26.0)
 	function get_manualDeferredStartSupported():Bool;
+	@:hxmc.available(macos >= 26.0, ios >= 26.0, maccatalyst >= 26.0)
 	var automaticallyRunsDeferredStart(get, set) : Bool;
+	@:hxmc.available(macos >= 26.0, ios >= 26.0, maccatalyst >= 26.0)
 	function get_automaticallyRunsDeferredStart():Bool;
+	@:hxmc.available(macos >= 26.0, ios >= 26.0, maccatalyst >= 26.0)
 	function set_automaticallyRunsDeferredStart(v:Bool):Bool;
+	@:hxmc.available(macos >= 26.0, ios >= 26.0, maccatalyst >= 26.0)
 	var deferredStartDelegate(get, never) : Null<AVCaptureSessionDeferredStartDelegate>;
+	@:hxmc.available(macos >= 26.0, ios >= 26.0, maccatalyst >= 26.0)
 	function get_deferredStartDelegate():Null<AVCaptureSessionDeferredStartDelegate>;
+	@:hxmc.available(macos >= 26.0, ios >= 26.0, maccatalyst >= 26.0)
 	var deferredStartDelegateCallbackQueue(get, never) : Null<NSObject>;
+	@:hxmc.available(macos >= 26.0, ios >= 26.0, maccatalyst >= 26.0)
 	function get_deferredStartDelegateCallbackQueue():Null<NSObject>;
 	function canSetSessionPreset(preset:NSStringArg):Bool;
 	function canAddInput(input:AVCaptureInput):Bool;
@@ -76,15 +102,21 @@ import objc.NSObject;
 	function canAddConnection(connection:AVCaptureConnection):Bool;
 	function addConnection(connection:AVCaptureConnection):Void;
 	function removeConnection(connection:AVCaptureConnection):Void;
+	@:hxmc.available(macos >= 15.0, ios >= 18.0, maccatalyst >= 18.0)
 	function setControlsDelegate(controlsDelegate:Null<AVCaptureSessionControlsDelegate>, queue:Null<NSObject>):Void;
+	@:hxmc.available(macos >= 15.0, ios >= 18.0, maccatalyst >= 18.0)
 	function canAddControl(control:AVCaptureControl):Bool;
+	@:hxmc.available(macos >= 15.0, ios >= 18.0, maccatalyst >= 18.0)
 	function addControl(control:AVCaptureControl):Void;
+	@:hxmc.available(macos >= 15.0, ios >= 18.0, maccatalyst >= 18.0)
 	function removeControl(control:AVCaptureControl):Void;
 	function beginConfiguration():Void;
 	function commitConfiguration():Void;
 	function startRunning():Void;
 	function stopRunning():Void;
+	@:hxmc.available(macos >= 26.0, ios >= 26.0, maccatalyst >= 26.0)
 	function runDeferredStartWhenNeeded():Void;
+	@:hxmc.available(macos >= 26.0, ios >= 26.0, maccatalyst >= 26.0)
 	function setDeferredStartDelegate(deferredStartDelegate:Null<AVCaptureSessionDeferredStartDelegate>, deferredStartDelegateCallbackQueue:Null<NSObject>):Void;
 	override function init():AVCaptureSession;
 }

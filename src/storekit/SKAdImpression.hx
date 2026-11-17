@@ -19,8 +19,11 @@ import objc.NSObject;
 	var adCampaignIdentifier(get, set) : NSNumberArg;
 	function get_adCampaignIdentifier():NSNumberArg;
 	function set_adCampaignIdentifier(v:NSNumberArg):NSNumberArg;
+	@:hxmc.available(ios >= 16.1, maccatalyst >= 16.1)
 	var sourceIdentifier(get, set) : NSNumberArg;
+	@:hxmc.available(ios >= 16.1, maccatalyst >= 16.1)
 	function get_sourceIdentifier():NSNumberArg;
+	@:hxmc.available(ios >= 16.1, maccatalyst >= 16.1)
 	function set_sourceIdentifier(v:NSNumberArg):NSNumberArg;
 	var adImpressionIdentifier(get, set) : NSStringArg;
 	function get_adImpressionIdentifier():NSStringArg;

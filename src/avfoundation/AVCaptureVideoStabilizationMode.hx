@@ -8,7 +8,9 @@ enum abstract AVCaptureVideoStabilizationMode(I64) to I64 {
 	var Standard = 1;
 	var Cinematic = 2;
 	var CinematicExtended = 3;
+	@:hxmc.available(ios >= 17.0, maccatalyst >= 17.0)
 	var PreviewOptimized = 4;
+	@:hxmc.available(ios >= 18.0, maccatalyst >= 18.0)
 	var CinematicExtendedEnhanced = 5;
 	var Auto = -1;
 	inline function new(v:I64) this = v;

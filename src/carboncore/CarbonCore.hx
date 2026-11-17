@@ -2,20 +2,25 @@
 package carboncore;
 
 import hxmc.I64;
-import hxmc.unsafe.CString;
 import hxmc.unsafe.Int16;
 import hxmc.unsafe.Ptr;
 
 @:hxmc.c @:hxmc.lib("/System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/CarbonCore") extern class CarbonCore {
 	@:deprecated
+	@:hxmc.available(ios >= 27.0, maccatalyst >= 27.0)
 	public static function FSCopyURLForVolume(vRefNum:Int16, url:Ptr):Int;
-	public static function GetMacOSStatusCommentString(err:Int):CString;
-	public static function GetMacOSStatusErrorString(err:Int):CString;
+	@:hxmc.available(ios >= 27.0)
+	@:hxmc.safe
+	public static function GetMacOSStatusCommentString(err:Int):String;
+	@:hxmc.available(ios >= 27.0)
+	@:hxmc.safe
+	public static function GetMacOSStatusErrorString(err:Int):String;
 	@:deprecated
 	public static function GetScriptManagerVariable(selector:Int16):I64;
 	public static function S64Absolute(value:I64):I64;
 	@:deprecated
 	public static function SetScriptManagerVariable(selector:Int16, param:I64):Int16;
+	@:hxmc.available(ios >= 27.0, maccatalyst >= 27.0)
 	public static function UCCompareTextNoLocale(options:Int, text1Ptr:Ptr, text1Length:I64, text2Ptr:Ptr, text2Length:I64, equivalent:Ptr, order:Ptr):Int;
 	public static function ldtox80(x:Ptr, x80:Ptr):Void;
 	public static function x80told(x80:Ptr, x:Ptr):Void;

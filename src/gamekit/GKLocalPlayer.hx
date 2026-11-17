@@ -26,8 +26,10 @@ import uikit.UIViewController;
 	var multiplayerGamingRestricted(get, never) : Bool;
 	@:selector("isMultiplayerGamingRestricted")
 	function get_multiplayerGamingRestricted():Bool;
+	@:hxmc.available(macos >= 11.0)
 	var personalizedCommunicationRestricted(get, never) : Bool;
 	@:selector("isPersonalizedCommunicationRestricted")
+	@:hxmc.available(macos >= 11.0)
 	function get_personalizedCommunicationRestricted():Bool;
 	@:deprecated
 	var friends(get, never) : Null<NSArray<NSString>>;
@@ -35,10 +37,13 @@ import uikit.UIViewController;
 	var authenticateHandler(get, set) : Null<(Null<UIViewController>, Null<NSError>) -> Void>;
 	function get_authenticateHandler():Null<(Null<UIViewController>, Null<NSError>) -> Void>;
 	function set_authenticateHandler(v:Null<(Null<UIViewController>, Null<NSError>) -> Void>):Null<(Null<UIViewController>, Null<NSError>) -> Void>;
+	@:hxmc.available(macos >= 12.0)
 	var isPresentingFriendRequestViewController(get, never) : Bool;
+	@:hxmc.available(macos >= 12.0)
 	function get_isPresentingFriendRequestViewController():Bool;
 	function loadRecentPlayersWithCompletionHandler(completionHandler:Null<(Null<NSArray<GKPlayer>>, Null<NSError>) -> Void>):Void;
 	function loadChallengableFriendsWithCompletionHandler(completionHandler:Null<(Null<NSArray<GKPlayer>>, Null<NSError>) -> Void>):Void;
+	@:hxmc.available(macos >= version("10.15.5"))
 	function fetchItemsForIdentityVerificationSignature(completionHandler:Null<(Null<NSURL>, Null<NSData>, Null<NSData>, I64, Null<NSError>) -> Void>):Void;
 	function registerListener(listener:GKLocalPlayerListener):Void;
 	function unregisterListener(listener:GKLocalPlayerListener):Void;
@@ -59,8 +64,11 @@ import uikit.UIViewController;
 	function setDefaultLeaderboardIdentifier(leaderboardIdentifier:NSStringArg, completionHandler:Null<Null<NSError> -> Void>):Void;
 	@:deprecated
 	function loadFriendsWithCompletionHandler(completionHandler:Null<(Null<NSArray<NSString>>, Null<NSError>) -> Void>):Void;
+	@:hxmc.available(macos >= 11.3)
 	function loadFriendsAuthorizationStatus(completionHandler:(GKFriendsAuthorizationStatus, Null<NSError>) -> Void):Void;
+	@:hxmc.available(macos >= 11.3)
 	function loadFriends(completionHandler:(Null<NSArray<GKPlayer>>, Null<NSError>) -> Void):Void;
+	@:hxmc.available(macos >= 11.3)
 	function loadFriendsWithIdentifiers(identifiers:NSArray<NSString>, completionHandler:(Null<NSArray<GKPlayer>>, Null<NSError>) -> Void):Void;
 	function fetchSavedGamesWithCompletionHandler(handler:Null<(Null<NSArray<GKSavedGame>>, Null<NSError>) -> Void>):Void;
 	function saveGameData(data:NSData, withName:NSStringArg, completionHandler:Null<(Null<GKSavedGame>, Null<NSError>) -> Void>):Void;

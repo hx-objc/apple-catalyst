@@ -26,7 +26,9 @@ import objc.NSObject;
 	function get_recoveryAttempter():Null<Id>;
 	var helpAnchor(get, never) : Null<NSStringArg>;
 	function get_helpAnchor():Null<NSStringArg>;
+	@:hxmc.available(macos >= 11.3)
 	var underlyingErrors(get, never) : NSArray<NSError>;
+	@:hxmc.available(macos >= 11.3)
 	function get_underlyingErrors():NSArray<NSError>;
 	static var supportsSecureCoding(get, never) : Bool;
 	static function get_supportsSecureCoding():Bool;

@@ -7,6 +7,9 @@ import foundation.NSDictionary;
 import foundation.NSString;
 import foundation.NSStringArg;
 import foundation.NSURL;
+import hxmc.I64;
+import hxmc.ReadOnlySpan;
+import hxmc.Span;
 import hxmc.objc.Id;
 import hxmc.unsafe.CString;
 import hxmc.unsafe.Ptr;
@@ -23,31 +26,45 @@ import hxmc.unsafe.UInt16;
 	public static function PMCreatePageFormatWithPMPaper(pageFormat:Ptr, paper:Ptr):Int;
 	public static function PMCreatePrintSettings(printSettings:Ptr):Int;
 	public static function PMCreateSession(printSession:Ptr):Int;
-	public static function PMGetAdjustedPageRect(pageFormat:Ptr, pageRect:Ptr):Int;
-	public static function PMGetAdjustedPaperRect(pageFormat:Ptr, paperRect:Ptr):Int;
-	public static function PMGetCollate(printSettings:Ptr, collate:Ptr):Int;
+	@:hxmc.len(pageRect, 1)
+	public static function PMGetAdjustedPageRect(pageFormat:Ptr, pageRect:Span<PMRect>):Int;
+	@:hxmc.len(paperRect, 1)
+	public static function PMGetAdjustedPaperRect(pageFormat:Ptr, paperRect:Span<PMRect>):Int;
+	@:hxmc.len(collate, 1)
+	public static function PMGetCollate(printSettings:Ptr, collate:Span<Bool>):Int;
 	public static function PMGetCopies(printSettings:Ptr, copies:Ptr):Int;
-	public static function PMGetDuplex(printSettings:Ptr, duplexSetting:Ptr):Int;
-	public static function PMGetFirstPage(printSettings:Ptr, first:Ptr):Int;
-	public static function PMGetLastPage(printSettings:Ptr, last:Ptr):Int;
+	@:hxmc.len(duplexSetting, 1)
+	public static function PMGetDuplex(printSettings:Ptr, duplexSetting:Span<Int>):Int;
+	@:hxmc.len(first, 1)
+	public static function PMGetFirstPage(printSettings:Ptr, first:Span<Int>):Int;
+	@:hxmc.len(last, 1)
+	public static function PMGetLastPage(printSettings:Ptr, last:Span<Int>):Int;
 	public static function PMGetOrientation(pageFormat:Ptr, orientation:Ptr):Int;
-	public static function PMGetPageFormatExtendedData(pageFormat:Ptr, dataID:Int, size:Ptr, extendedData:Ptr):Int;
+	@:hxmc.len(size, 1)
+	public static function PMGetPageFormatExtendedData(pageFormat:Ptr, dataID:Int, size:Span<Int>, extendedData:Ptr):Int;
 	public static function PMGetPageFormatPaper(format:Ptr, paper:Ptr):Int;
-	public static function PMGetPageRange(printSettings:Ptr, minPage:Ptr, maxPage:Ptr):Int;
-	public static function PMGetScale(pageFormat:Ptr, scale:Ptr):Int;
-	public static function PMGetUnadjustedPageRect(pageFormat:Ptr, pageRect:Ptr):Int;
-	public static function PMGetUnadjustedPaperRect(pageFormat:Ptr, paperRect:Ptr):Int;
+	@:hxmc.len(minPage, 1)
+	@:hxmc.len(maxPage, 1)
+	public static function PMGetPageRange(printSettings:Ptr, minPage:Span<Int>, maxPage:Span<Int>):Int;
+	@:hxmc.len(scale, 1)
+	public static function PMGetScale(pageFormat:Ptr, scale:Span<Float>):Int;
+	@:hxmc.len(pageRect, 1)
+	public static function PMGetUnadjustedPageRect(pageFormat:Ptr, pageRect:Span<PMRect>):Int;
+	@:hxmc.len(paperRect, 1)
+	public static function PMGetUnadjustedPaperRect(pageFormat:Ptr, paperRect:Span<PMRect>):Int;
 	public static function PMPageFormatCreateDataRepresentation(pageFormat:Ptr, data:Ptr, format:PMDataFormat):Int;
 	public static function PMPageFormatCreateWithDataRepresentation(data:NSData, pageFormat:Ptr):Int;
 	public static function PMPageFormatGetPrinterID(pageFormat:Ptr, printerID:Ptr):Int;
 	public static function PMPaperCreateCustom(printer:Ptr, id:Null<NSStringArg>, name:Null<NSStringArg>, width:Float, height:Float, margins:Ptr, paperP:Ptr):Int;
 	public static function PMPaperCreateLocalizedName(paper:Ptr, printer:Ptr, paperName:Ptr):Int;
-	public static function PMPaperGetHeight(paper:Ptr, paperHeight:Ptr):Int;
+	@:hxmc.len(paperHeight, 1)
+	public static function PMPaperGetHeight(paper:Ptr, paperHeight:Span<Float>):Int;
 	public static function PMPaperGetID(paper:Ptr, paperID:Ptr):Int;
 	public static function PMPaperGetMargins(paper:Ptr, paperMargins:Ptr):Int;
 	public static function PMPaperGetPPDPaperName(paper:Ptr, paperName:Ptr):Int;
 	public static function PMPaperGetPrinterID(paper:Ptr, printerID:Ptr):Int;
-	public static function PMPaperGetWidth(paper:Ptr, paperWidth:Ptr):Int;
+	@:hxmc.len(paperWidth, 1)
+	public static function PMPaperGetWidth(paper:Ptr, paperWidth:Span<Float>):Int;
 	public static function PMPaperIsCustom(paper:Ptr):Bool;
 	public static function PMPresetCopyName(preset:Ptr, name:Ptr):Int;
 	public static function PMPresetCreatePrintSettings(preset:Ptr, session:Ptr, printSettings:Ptr):Int;
@@ -68,30 +85,39 @@ import hxmc.unsafe.UInt16;
 	public static function PMPrinterCopyPresets(printer:Ptr, presetList:Ptr):Int;
 	public static function PMPrinterCopyState(printer:Ptr, stateDict:Ptr):Int;
 	public static function PMPrinterCreateFromPrinterID(printerID:NSStringArg):Ptr;
-	public static function PMPrinterGetCommInfo(printer:Ptr, supportsControlCharRangeP:Ptr, supportsEightBitP:Ptr):Int;
-	public static function PMPrinterGetDriverCreator(printer:Ptr, creator:Ptr):Int;
+	@:hxmc.len(supportsControlCharRangeP, 1)
+	@:hxmc.len(supportsEightBitP, 1)
+	public static function PMPrinterGetCommInfo(printer:Ptr, supportsControlCharRangeP:Span<Bool>, supportsEightBitP:Span<Bool>):Int;
+	@:hxmc.len(creator, 1)
+	public static function PMPrinterGetDriverCreator(printer:Ptr, creator:Span<Int>):Int;
 	public static function PMPrinterGetDriverReleaseInfo(printer:Ptr, release:Ptr):Int;
 	public static function PMPrinterGetID(printer:Ptr):Null<NSString>;
-	public static function PMPrinterGetIndexedPrinterResolution(printer:Ptr, index:Int, resolutionP:Ptr):Int;
+	@:hxmc.len(resolutionP, 1)
+	public static function PMPrinterGetIndexedPrinterResolution(printer:Ptr, index:Int, resolutionP:Span<PMResolution>):Int;
 	public static function PMPrinterGetLanguageInfo(printer:Ptr, info:Ptr):Int;
 	public static function PMPrinterGetLocation(printer:Ptr):Null<NSString>;
 	public static function PMPrinterGetMakeAndModelName(printer:Ptr, makeAndModel:Ptr):Int;
 	public static function PMPrinterGetMimeTypes(printer:Ptr, settings:Ptr, mimeTypes:Ptr):Int;
 	public static function PMPrinterGetName(printer:Ptr):Null<NSString>;
-	public static function PMPrinterGetOutputResolution(printer:Ptr, printSettings:Ptr, resolutionP:Ptr):Int;
+	@:hxmc.len(resolutionP, 1)
+	public static function PMPrinterGetOutputResolution(printer:Ptr, printSettings:Ptr, resolutionP:Span<PMResolution>):Int;
 	public static function PMPrinterGetPaperList(printer:Ptr, paperList:Ptr):Int;
-	public static function PMPrinterGetPrinterResolutionCount(printer:Ptr, countP:Ptr):Int;
+	@:hxmc.len(countP, 1)
+	public static function PMPrinterGetPrinterResolutionCount(printer:Ptr, countP:Span<Int>):Int;
 	public static function PMPrinterGetState(printer:Ptr, state:Ptr):Int;
 	public static function PMPrinterIsDefault(printer:Ptr):Bool;
 	public static function PMPrinterIsFavorite(printer:Ptr):Bool;
 	public static function PMPrinterIsPostScriptCapable(printer:Ptr):Bool;
-	public static function PMPrinterIsPostScriptPrinter(printer:Ptr, isPSPrinter:Ptr):Int;
-	public static function PMPrinterIsRemote(printer:Ptr, isRemoteP:Ptr):Int;
+	@:hxmc.len(isPSPrinter, 1)
+	public static function PMPrinterIsPostScriptPrinter(printer:Ptr, isPSPrinter:Span<Bool>):Int;
+	@:hxmc.len(isRemoteP, 1)
+	public static function PMPrinterIsRemote(printer:Ptr, isRemoteP:Span<Bool>):Int;
 	public static function PMPrinterPrintWithFile(printer:Ptr, settings:Ptr, format:Ptr, mimeType:Null<NSStringArg>, fileURL:NSURL):Int;
 	public static function PMPrinterPrintWithProvider(printer:Ptr, settings:Ptr, format:Ptr, mimeType:NSStringArg, provider:CGDataProvider):Int;
 	public static function PMPrinterSendCommand(printer:Ptr, commandString:NSStringArg, jobTitle:Null<NSStringArg>, options:Null<NSDictionary>):Int;
 	public static function PMPrinterSetDefault(printer:Ptr):Int;
-	public static function PMPrinterSetOutputResolution(printer:Ptr, printSettings:Ptr, resolutionP:Ptr):Int;
+	@:hxmc.len(resolutionP, 1)
+	public static function PMPrinterSetOutputResolution(printer:Ptr, printSettings:Ptr, resolutionP:ReadOnlySpan<PMResolution>):Int;
 	public static function PMRelease(object:Ptr):Int;
 	public static function PMRetain(object:Ptr):Int;
 	public static function PMServerCreatePrinterList(server:Ptr, printerList:Ptr):Int;
@@ -102,7 +128,8 @@ import hxmc.unsafe.UInt16;
 	public static function PMSessionCopyDestinationLocation(printSession:Ptr, printSettings:Ptr, destLocationP:Ptr):Int;
 	public static function PMSessionCopyOutputFormatList(printSession:Ptr, destType:UInt16, documentFormatP:Ptr):Int;
 	public static function PMSessionCreatePageFormatList(printSession:Ptr, printer:Ptr, pageFormatList:Ptr):Int;
-	public static function PMSessionCreatePrinterList(printSession:Ptr, printerList:Ptr, currentIndex:Ptr, currentPrinter:Ptr):Int;
+	@:hxmc.len(currentIndex, 1)
+	public static function PMSessionCreatePrinterList(printSession:Ptr, printerList:Ptr, currentIndex:Span<I64>, currentPrinter:Ptr):Int;
 	public static function PMSessionDefaultPageFormat(printSession:Ptr, pageFormat:Ptr):Int;
 	public static function PMSessionDefaultPrintSettings(printSession:Ptr, printSettings:Ptr):Int;
 	public static function PMSessionEndDocumentNoDialog(printSession:Ptr):Int;
@@ -116,8 +143,10 @@ import hxmc.unsafe.UInt16;
 	public static function PMSessionSetDataInSession(printSession:Ptr, key:NSStringArg, data:Id):Int;
 	public static function PMSessionSetDestination(printSession:Ptr, printSettings:Ptr, destType:UInt16, destFormat:Null<NSStringArg>, destLocation:Null<NSURL>):Int;
 	public static function PMSessionSetError(printSession:Ptr, printError:Int):Int;
-	public static function PMSessionValidatePageFormat(printSession:Ptr, pageFormat:Ptr, changed:Ptr):Int;
-	public static function PMSessionValidatePrintSettings(printSession:Ptr, printSettings:Ptr, changed:Ptr):Int;
+	@:hxmc.len(changed, 1)
+	public static function PMSessionValidatePageFormat(printSession:Ptr, pageFormat:Ptr, changed:Span<Bool>):Int;
+	@:hxmc.len(changed, 1)
+	public static function PMSessionValidatePrintSettings(printSession:Ptr, printSettings:Ptr, changed:Span<Bool>):Int;
 	public static function PMSetCollate(printSettings:Ptr, collate:Bool):Int;
 	public static function PMSetCopies(printSettings:Ptr, copies:Int, lock:Bool):Int;
 	public static function PMSetDuplex(printSettings:Ptr, duplexSetting:Int):Int;

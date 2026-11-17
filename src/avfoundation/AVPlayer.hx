@@ -23,8 +23,11 @@ import objc.NSObject;
 	var rate(get, set) : Float32;
 	function get_rate():Float32;
 	function set_rate(v:Float32):Float32;
+	@:hxmc.available(macos >= 13.0, ios >= 16.0, maccatalyst >= 16.0)
 	var defaultRate(get, set) : Float32;
+	@:hxmc.available(macos >= 13.0, ios >= 16.0, maccatalyst >= 16.0)
 	function get_defaultRate():Float32;
+	@:hxmc.available(macos >= 13.0, ios >= 16.0, maccatalyst >= 16.0)
 	function set_defaultRate(v:Float32):Float32;
 	var timeControlStatus(get, never) : AVPlayerTimeControlStatus;
 	function get_timeControlStatus():AVPlayerTimeControlStatus;
@@ -38,8 +41,11 @@ import objc.NSObject;
 	var automaticallyWaitsToMinimizeStalling(get, set) : Bool;
 	function get_automaticallyWaitsToMinimizeStalling():Bool;
 	function set_automaticallyWaitsToMinimizeStalling(v:Bool):Bool;
+	@:hxmc.available(macos >= 12.0)
 	var sourceClock(get, set) : Null<CMClock>;
+	@:hxmc.available(macos >= 12.0)
 	function get_sourceClock():Null<CMClock>;
+	@:hxmc.available(macos >= 12.0)
 	function set_sourceClock(v:Null<CMClock>):Null<CMClock>;
 	var volume(get, set) : Float32;
 	function get_volume():Float32;
@@ -85,25 +91,44 @@ import objc.NSObject;
 	var preventsDisplaySleepDuringVideoPlayback(get, set) : Bool;
 	function get_preventsDisplaySleepDuringVideoPlayback():Bool;
 	function set_preventsDisplaySleepDuringVideoPlayback(v:Bool):Bool;
+	@:hxmc.available(macos >= 12.0)
 	var audiovisualBackgroundPlaybackPolicy(get, set) : AVPlayerAudiovisualBackgroundPlaybackPolicy;
+	@:hxmc.available(macos >= 12.0)
 	function get_audiovisualBackgroundPlaybackPolicy():AVPlayerAudiovisualBackgroundPlaybackPolicy;
+	@:hxmc.available(macos >= 12.0)
 	function set_audiovisualBackgroundPlaybackPolicy(v:AVPlayerAudiovisualBackgroundPlaybackPolicy):AVPlayerAudiovisualBackgroundPlaybackPolicy;
+	@:hxmc.available(macos >= 12.0)
 	var playbackCoordinator(get, never) : AVPlayerPlaybackCoordinator;
+	@:hxmc.available(macos >= 12.0)
 	function get_playbackCoordinator():AVPlayerPlaybackCoordinator;
+	@:hxmc.available(macos >= 14.2, ios >= 17.2, maccatalyst >= 17.2)
 	var videoOutput(get, set) : Null<AVPlayerVideoOutput>;
+	@:hxmc.available(macos >= 14.2, ios >= 17.2, maccatalyst >= 17.2)
 	function get_videoOutput():Null<AVPlayerVideoOutput>;
+	@:hxmc.available(macos >= 14.2, ios >= 17.2, maccatalyst >= 17.2)
 	function set_videoOutput(v:Null<AVPlayerVideoOutput>):Null<AVPlayerVideoOutput>;
+	@:hxmc.available(macos >= 26.0, ios >= 26.0, maccatalyst >= 26.0)
 	var networkResourcePriority(get, set) : AVPlayerNetworkResourcePriority;
+	@:hxmc.available(macos >= 26.0, ios >= 26.0, maccatalyst >= 26.0)
 	function get_networkResourcePriority():AVPlayerNetworkResourcePriority;
+	@:hxmc.available(macos >= 26.0, ios >= 26.0, maccatalyst >= 26.0)
 	function set_networkResourcePriority(v:AVPlayerNetworkResourcePriority):AVPlayerNetworkResourcePriority;
+	@:hxmc.available(ios >= 26.0, maccatalyst >= 26.0)
 	var audioOutputSuppressedDueToNonMixableAudioRoute(get, never) : Bool;
+	@:hxmc.available(ios >= 26.0, maccatalyst >= 26.0)
 	function get_audioOutputSuppressedDueToNonMixableAudioRoute():Bool;
+	@:hxmc.available(macos >= 26.0, ios >= 26.0, maccatalyst >= 26.0)
 	static var observationEnabled(get, set) : Bool;
 	@:selector("isObservationEnabled")
+	@:hxmc.available(macos >= 26.0, ios >= 26.0, maccatalyst >= 26.0)
 	static function get_observationEnabled():Bool;
+	@:hxmc.available(macos >= 26.0, ios >= 26.0, maccatalyst >= 26.0)
 	static function set_observationEnabled(v:Bool):Bool;
+	@:hxmc.available(macos >= 26.4, ios >= 26.4, maccatalyst >= 26.4)
 	var allowsCaptureOfClearKeyVideo(get, set) : Bool;
+	@:hxmc.available(macos >= 26.4, ios >= 26.4, maccatalyst >= 26.4)
 	function get_allowsCaptureOfClearKeyVideo():Bool;
+	@:hxmc.available(macos >= 26.4, ios >= 26.4, maccatalyst >= 26.4)
 	function set_allowsCaptureOfClearKeyVideo(v:Bool):Bool;
 	@:deprecated
 	var closedCaptionDisplayEnabled(get, set) : Bool;

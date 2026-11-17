@@ -8,98 +8,191 @@ import foundation.NSStringArg;
 import hxmc.I64;
 import objc.NSObject;
 
-@:hxmc.framework("ScreenCaptureKit") @:hxmc.objc extern class SCStreamConfiguration extends NSObject {
+@:hxmc.framework("ScreenCaptureKit") @:hxmc.objc @:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2) extern class SCStreamConfiguration extends NSObject {
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	static function alloc():SCStreamConfiguration;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	var width(get, set) : I64;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	function get_width():I64;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	function set_width(v:I64):I64;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	var height(get, set) : I64;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	function get_height():I64;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	function set_height(v:I64):I64;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	var minimumFrameInterval(get, set) : CMTime;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	function get_minimumFrameInterval():CMTime;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	function set_minimumFrameInterval(v:CMTime):CMTime;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	var pixelFormat(get, set) : Int;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	function get_pixelFormat():Int;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	function set_pixelFormat(v:Int):Int;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	var scalesToFit(get, set) : Bool;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	function get_scalesToFit():Bool;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	function set_scalesToFit(v:Bool):Bool;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	var preservesAspectRatio(get, set) : Bool;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	function get_preservesAspectRatio():Bool;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	function set_preservesAspectRatio(v:Bool):Bool;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	var streamName(get, set) : Null<NSStringArg>;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	function get_streamName():Null<NSStringArg>;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	function set_streamName(v:Null<NSStringArg>):Null<NSStringArg>;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	var showsCursor(get, set) : Bool;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	function get_showsCursor():Bool;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	function set_showsCursor(v:Bool):Bool;
+	@:hxmc.available(macos >= 15.0, ios >= 27.0, maccatalyst >= 18.2)
 	var showMouseClicks(get, set) : Bool;
+	@:hxmc.available(macos >= 15.0, ios >= 27.0, maccatalyst >= 18.2)
 	function get_showMouseClicks():Bool;
+	@:hxmc.available(macos >= 15.0, ios >= 27.0, maccatalyst >= 18.2)
 	function set_showMouseClicks(v:Bool):Bool;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	var backgroundColor(get, set) : CGColor;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	function get_backgroundColor():CGColor;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	function set_backgroundColor(v:CGColor):CGColor;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	var sourceRect(get, set) : CGRect;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	function get_sourceRect():CGRect;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	function set_sourceRect(v:CGRect):CGRect;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	var destinationRect(get, set) : CGRect;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	function get_destinationRect():CGRect;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	function set_destinationRect(v:CGRect):CGRect;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	var queueDepth(get, set) : I64;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	function get_queueDepth():I64;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	function set_queueDepth(v:I64):I64;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	var colorMatrix(get, set) : NSStringArg;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	function get_colorMatrix():NSStringArg;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	function set_colorMatrix(v:NSStringArg):NSStringArg;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	var colorSpaceName(get, set) : NSStringArg;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	function get_colorSpaceName():NSStringArg;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	function set_colorSpaceName(v:NSStringArg):NSStringArg;
+	@:hxmc.available(macos >= 13.0, ios >= 27.0, maccatalyst >= 18.2)
 	var capturesAudio(get, set) : Bool;
+	@:hxmc.available(macos >= 13.0, ios >= 27.0, maccatalyst >= 18.2)
 	function get_capturesAudio():Bool;
+	@:hxmc.available(macos >= 13.0, ios >= 27.0, maccatalyst >= 18.2)
 	function set_capturesAudio(v:Bool):Bool;
+	@:hxmc.available(macos >= 13.0, ios >= 27.0, maccatalyst >= 18.2)
 	var sampleRate(get, set) : I64;
+	@:hxmc.available(macos >= 13.0, ios >= 27.0, maccatalyst >= 18.2)
 	function get_sampleRate():I64;
+	@:hxmc.available(macos >= 13.0, ios >= 27.0, maccatalyst >= 18.2)
 	function set_sampleRate(v:I64):I64;
+	@:hxmc.available(macos >= 13.0, ios >= 27.0, maccatalyst >= 18.2)
 	var channelCount(get, set) : I64;
+	@:hxmc.available(macos >= 13.0, ios >= 27.0, maccatalyst >= 18.2)
 	function get_channelCount():I64;
+	@:hxmc.available(macos >= 13.0, ios >= 27.0, maccatalyst >= 18.2)
 	function set_channelCount(v:I64):I64;
+	@:hxmc.available(macos >= 13.0, ios >= 27.0, maccatalyst >= 18.2)
 	var excludesCurrentProcessAudio(get, set) : Bool;
+	@:hxmc.available(macos >= 13.0, ios >= 27.0, maccatalyst >= 18.2)
 	function get_excludesCurrentProcessAudio():Bool;
+	@:hxmc.available(macos >= 13.0, ios >= 27.0, maccatalyst >= 18.2)
 	function set_excludesCurrentProcessAudio(v:Bool):Bool;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	var ignoreShadowsDisplay(get, set) : Bool;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	function get_ignoreShadowsDisplay():Bool;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	function set_ignoreShadowsDisplay(v:Bool):Bool;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	var ignoreShadowsSingleWindow(get, set) : Bool;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	function get_ignoreShadowsSingleWindow():Bool;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	function set_ignoreShadowsSingleWindow(v:Bool):Bool;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	var captureResolution(get, set) : SCCaptureResolutionType;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	function get_captureResolution():SCCaptureResolutionType;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	function set_captureResolution(v:SCCaptureResolutionType):SCCaptureResolutionType;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	var capturesShadowsOnly(get, set) : Bool;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	function get_capturesShadowsOnly():Bool;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	function set_capturesShadowsOnly(v:Bool):Bool;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	var shouldBeOpaque(get, set) : Bool;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	function get_shouldBeOpaque():Bool;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	function set_shouldBeOpaque(v:Bool):Bool;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	var ignoreGlobalClipDisplay(get, set) : Bool;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	function get_ignoreGlobalClipDisplay():Bool;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	function set_ignoreGlobalClipDisplay(v:Bool):Bool;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	var ignoreGlobalClipSingleWindow(get, set) : Bool;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	function get_ignoreGlobalClipSingleWindow():Bool;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	function set_ignoreGlobalClipSingleWindow(v:Bool):Bool;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	var presenterOverlayPrivacyAlertSetting(get, set) : SCPresenterOverlayAlertSetting;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	function get_presenterOverlayPrivacyAlertSetting():SCPresenterOverlayAlertSetting;
+	@:hxmc.available(macos >= 14.0, ios >= 27.0, maccatalyst >= 18.2)
 	function set_presenterOverlayPrivacyAlertSetting(v:SCPresenterOverlayAlertSetting):SCPresenterOverlayAlertSetting;
+	@:hxmc.available(macos >= 14.2, ios >= 27.0, maccatalyst >= 18.2)
 	var includeChildWindows(get, set) : Bool;
+	@:hxmc.available(macos >= 14.2, ios >= 27.0, maccatalyst >= 18.2)
 	function get_includeChildWindows():Bool;
+	@:hxmc.available(macos >= 14.2, ios >= 27.0, maccatalyst >= 18.2)
 	function set_includeChildWindows(v:Bool):Bool;
+	@:hxmc.available(macos >= 15.0, ios >= 27.0, maccatalyst >= 18.2)
 	var captureMicrophone(get, set) : Bool;
+	@:hxmc.available(macos >= 15.0, ios >= 27.0, maccatalyst >= 18.2)
 	function get_captureMicrophone():Bool;
+	@:hxmc.available(macos >= 15.0, ios >= 27.0, maccatalyst >= 18.2)
 	function set_captureMicrophone(v:Bool):Bool;
+	@:hxmc.available(macos >= 15.0, ios >= 27.0, maccatalyst >= 18.2)
 	var captureDynamicRange(get, set) : SCCaptureDynamicRange;
+	@:hxmc.available(macos >= 15.0, ios >= 27.0, maccatalyst >= 18.2)
 	function get_captureDynamicRange():SCCaptureDynamicRange;
+	@:hxmc.available(macos >= 15.0, ios >= 27.0, maccatalyst >= 18.2)
 	function set_captureDynamicRange(v:SCCaptureDynamicRange):SCCaptureDynamicRange;
+	@:hxmc.available(macos >= 15.0, ios >= 27.0, maccatalyst >= 18.2)
 	static function streamConfigurationWithPreset(preset:SCStreamConfigurationPreset):SCStreamConfiguration;
+	@:hxmc.available(macos >= 12.3, ios >= 27.0, maccatalyst >= 18.2)
 	override function init():SCStreamConfiguration;
 }

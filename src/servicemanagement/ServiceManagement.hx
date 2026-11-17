@@ -11,6 +11,7 @@ import hxmc.unsafe.Ptr;
 	public static function SMJobRemove(domain:NSStringArg, jobLabel:NSStringArg, auth:Ptr, wait:Bool, outError:Ptr):Bool;
 	@:deprecated
 	public static function SMJobSubmit(domain:NSStringArg, job:NSDictionary, auth:Ptr, outError:Ptr):Bool;
+	@:hxmc.available(macos >= 15.0, maccatalyst >= 18.0)
 	public static final SMAppServiceErrorDomain : NSString;
 	public static final kSMDomainSystemLaunchd : NSString;
 	public static final kSMDomainUserLaunchd : NSString;

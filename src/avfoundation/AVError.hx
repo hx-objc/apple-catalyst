@@ -75,17 +75,29 @@ enum abstract AVError(I64) to I64 {
 	var OperationNotSupportedForPreset = -11871;
 	var SessionHardwareCostOverage = -11872;
 	var UnsupportedDeviceActiveFormat = -11873;
+	@:hxmc.available(macos >= 11.0)
 	var IncorrectlyConfigured = -11875;
+	@:hxmc.available(macos >= 11.0)
 	var SegmentStartedWithNonSyncSample = -11876;
+	@:hxmc.available(macos >= 11.0)
 	var RosettaNotInstalled = -11877;
+	@:hxmc.available(macos >= 12.0)
 	var OperationCancelled = -11878;
+	@:hxmc.available(macos >= 11.4)
 	var ContentKeyRequestCancelled = -11879;
+	@:hxmc.available(macos >= 13.0, ios >= 16.0, maccatalyst >= 16.0)
 	var InvalidSampleCursor = -11880;
+	@:hxmc.available(macos >= 13.0, ios >= 16.0, maccatalyst >= 16.0)
 	var FailedToLoadSampleData = -11881;
+	@:hxmc.available(macos >= 13.0, ios >= 16.0, maccatalyst >= 16.0)
 	var AirPlayReceiverTemporarilyUnavailable = -11882;
+	@:hxmc.available(macos >= 13.0, ios >= 16.0, maccatalyst >= 16.0)
 	var EncodeFailed = -11883;
+	@:hxmc.available(macos >= 13.0, ios >= 16.0, maccatalyst >= 16.0)
 	var SandboxExtensionDenied = -11884;
+	@:hxmc.available(macos >= 15.0, ios >= 18.0, maccatalyst >= 18.0)
 	var ToneMappingFailed = -11885;
+	@:hxmc.available(macos >= 27.0, ios >= 27.0, maccatalyst >= 27.0)
 	var NotEnoughSpaceForProVideoStorageReplenishment = -11897;
 	inline function new(v:I64) this = v;
 }

@@ -7,16 +7,27 @@ import foundation.NSCoder;
 import uikit.UITraitCollection;
 import uikit.UIView;
 
-@:hxmc.framework("MapKit") @:hxmc.objc extern class MKPitchControl extends UIView {
+@:hxmc.framework("MapKit") @:hxmc.objc @:hxmc.available(macos >= 11.0) extern class MKPitchControl extends UIView {
+	@:hxmc.available(macos >= 11.0)
 	static function alloc():MKPitchControl;
+	@:hxmc.available(macos >= 11.0)
 	static function appearance():MKPitchControl;
+	@:hxmc.available(macos >= 11.0)
 	static overload function appearanceForTraitCollection(trait:UITraitCollection):MKPitchControl;
+	@:hxmc.available(macos >= 11.0)
 	static function appearanceWhenContainedInInstancesOfClasses(containerTypes:NSArray):MKPitchControl;
+	@:hxmc.available(macos >= 11.0)
 	var mapView(get, set) : Null<MKMapView>;
+	@:hxmc.available(macos >= 11.0)
 	function get_mapView():Null<MKMapView>;
+	@:hxmc.available(macos >= 11.0)
 	function set_mapView(v:Null<MKMapView>):Null<MKMapView>;
+	@:hxmc.available(macos >= 11.0)
 	static function pitchControlWithMapView(mapView:Null<MKMapView>):MKPitchControl;
+	@:hxmc.available(macos >= 11.0)
 	override function init():MKPitchControl;
+	@:hxmc.available(macos >= 11.0)
 	override function initWithCoder(coder:NSCoder):Null<MKPitchControl>;
+	@:hxmc.available(macos >= 11.0)
 	override function initWithFrame(frame:CGRect):MKPitchControl;
 }

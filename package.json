@@ -1,8 +1,8 @@
 {
   "dependencies": {
-    "@hx-objc/apple-shared": "github:hx-objc/apple-shared",
-    "@hx-objc/apple-shared-uikit": "github:hx-objc/apple-shared-uikit",
-    "@hx-objc/apple-shared-mac": "github:hx-objc/apple-shared-mac"
+    "@hx-objc/apple-shared": "github:hx-objc/apple-shared#27.2.0",
+    "@hx-objc/apple-shared-uikit": "github:hx-objc/apple-shared-uikit#27.2.0",
+    "@hx-objc/apple-shared-mac": "github:hx-objc/apple-shared-mac#27.2.0"
   },
   "description": "Haxe externs for hxmc: Mac Catalyst: UIKit on macOS, and every Mac Catalyst API.",
   "haxe": {
@@ -12,5 +12,5 @@
   "license": "MIT",
   "name": "@hx-objc/apple-catalyst",
   "repository": "github:hx-objc/apple-catalyst",
-  "version": "0.1.0"
+  "version": "27.2.0"
 }

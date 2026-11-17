@@ -35,7 +35,9 @@ import objc.NSObject;
 	var overrideTraitCollection(get, set) : Null<UITraitCollection>;
 	function get_overrideTraitCollection():Null<UITraitCollection>;
 	function set_overrideTraitCollection(v:Null<UITraitCollection>):Null<UITraitCollection>;
+	@:hxmc.available(ios >= 17.0, maccatalyst >= 17.0)
 	var traitOverrides(get, never) : UITraitOverrides;
+	@:hxmc.available(ios >= 17.0, maccatalyst >= 17.0)
 	function get_traitOverrides():UITraitOverrides;
 	var traitCollection(get, never) : UITraitCollection;
 	function get_traitCollection():UITraitCollection;
@@ -66,14 +68,21 @@ import objc.NSObject;
 	function updateFocusIfNeeded():Void;
 	function shouldUpdateFocusInContext(context:UIFocusUpdateContext):Bool;
 	function didUpdateFocusInContext(context:UIFocusUpdateContext, withAnimationCoordinator:UIFocusAnimationCoordinator):Void;
+	@:hxmc.available(ios >= 17.0, maccatalyst >= 17.0)
 	overload function registerForTraitChanges(traits:NSArray, withHandler:(UITraitEnvironment, UITraitCollection) -> Void):UITraitChangeRegistration;
+	@:hxmc.available(ios >= 17.0, maccatalyst >= 17.0)
 	overload function registerForTraitChanges(traits:NSArray, withTarget:Id, action:Selector):UITraitChangeRegistration;
+	@:hxmc.available(ios >= 17.0, maccatalyst >= 17.0)
 	overload function registerForTraitChanges(traits:NSArray, withAction:Selector):UITraitChangeRegistration;
+	@:hxmc.available(ios >= 17.0, maccatalyst >= 17.0)
 	function unregisterForTraitChanges(registration:UITraitChangeRegistration):Void;
 	@:selector("registerForTraitChanges:withHandler:")
+	@:hxmc.available(ios >= 17.0, maccatalyst >= 17.0)
 	function registerForTraitChangesWithHandler(traits:NSArray, withHandler:(UITraitEnvironment, UITraitCollection) -> Void):UITraitChangeRegistration;
 	@:selector("registerForTraitChanges:withTarget:action:")
+	@:hxmc.available(ios >= 17.0, maccatalyst >= 17.0)
 	function registerForTraitChangesWithTargetAction(traits:NSArray, withTarget:Id, action:Selector):UITraitChangeRegistration;
 	@:selector("registerForTraitChanges:withAction:")
+	@:hxmc.available(ios >= 17.0, maccatalyst >= 17.0)
 	function registerForTraitChangesWithAction(traits:NSArray, withAction:Selector):UITraitChangeRegistration;
 }

@@ -29,8 +29,11 @@ import objc.NSObject;
 	var allowsUserCustomization(get, set) : Bool;
 	function get_allowsUserCustomization():Bool;
 	function set_allowsUserCustomization(v:Bool):Bool;
+	@:hxmc.available(macos >= 15.0, ios >= 18.0, maccatalyst >= 18.0)
 	var allowsDisplayModeCustomization(get, set) : Bool;
+	@:hxmc.available(macos >= 15.0, ios >= 18.0, maccatalyst >= 18.0)
 	function get_allowsDisplayModeCustomization():Bool;
+	@:hxmc.available(macos >= 15.0, ios >= 18.0, maccatalyst >= 18.0)
 	function set_allowsDisplayModeCustomization(v:Bool):Bool;
 	var identifier(get, never) : NSStringArg;
 	function get_identifier():NSStringArg;
@@ -38,11 +41,17 @@ import objc.NSObject;
 	function get_items():NSArray<NSToolbarItem>;
 	var visibleItems(get, never) : Null<NSArray<NSToolbarItem>>;
 	function get_visibleItems():Null<NSArray<NSToolbarItem>>;
+	@:hxmc.available(macos >= 15.0, ios >= 18.0, maccatalyst >= 18.0)
 	var itemIdentifiers(get, set) : NSArray<NSString>;
+	@:hxmc.available(macos >= 15.0, ios >= 18.0, maccatalyst >= 18.0)
 	function get_itemIdentifiers():NSArray<NSString>;
+	@:hxmc.available(macos >= 15.0, ios >= 18.0, maccatalyst >= 18.0)
 	function set_itemIdentifiers(v:NSArray<NSString>):NSArray<NSString>;
+	@:hxmc.available(macos >= 13.0, ios >= 16.0, maccatalyst >= 16.0)
 	var centeredItemIdentifiers(get, set) : NSSet<NSString>;
+	@:hxmc.available(macos >= 13.0, ios >= 16.0, maccatalyst >= 16.0)
 	function get_centeredItemIdentifiers():NSSet<NSString>;
+	@:hxmc.available(macos >= 13.0, ios >= 16.0, maccatalyst >= 16.0)
 	function set_centeredItemIdentifiers(v:NSSet<NSString>):NSSet<NSString>;
 	var autosavesConfiguration(get, set) : Bool;
 	function get_autosavesConfiguration():Bool;
@@ -51,6 +60,7 @@ import objc.NSObject;
 	override function init():NSToolbar;
 	function insertItemWithItemIdentifier(itemIdentifier:NSStringArg, atIndex:I64):Void;
 	function removeItemAtIndex(index:I64):Void;
+	@:hxmc.available(macos >= 15.0, ios >= 18.0, maccatalyst >= 18.0)
 	function removeItemWithItemIdentifier(itemIdentifier:NSStringArg):Void;
 	function runCustomizationPalette(sender:Null<Id>):Void;
 }

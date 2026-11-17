@@ -14,6 +14,7 @@ import objc.NSObject;
 	function registerForTaskWithIdentifier(identifier:NSStringArg, usingQueue:Null<NSObject>, launchHandler:BGTask -> Void):Bool;
 	@:deprecated
 	overload function submitTaskRequest(taskRequest:BGTaskRequest, error:Ptr):Bool;
+	@:hxmc.available(ios >= 27.0, maccatalyst >= 27.0)
 	overload function submitTaskRequest(taskRequest:BGTaskRequest, completionHandler:Null<NSError> -> Void):Void;
 	function cancelTaskRequestWithIdentifier(identifier:NSStringArg):Void;
 	function cancelAllTaskRequests():Void;

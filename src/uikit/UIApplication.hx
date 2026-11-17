@@ -79,7 +79,9 @@ import hxmc.objc.Selector;
 	function get_userInterfaceLayoutDirection():UIUserInterfaceLayoutDirection;
 	var preferredContentSizeCategory(get, never) : NSStringArg;
 	function get_preferredContentSizeCategory():NSStringArg;
+	@:hxmc.available(ios >= 27.0, maccatalyst >= 27.0)
 	var systemPrefersReducedResourceUsage(get, never) : Bool;
+	@:hxmc.available(ios >= 27.0, maccatalyst >= 27.0)
 	function get_systemPrefersReducedResourceUsage():Bool;
 	var connectedScenes(get, never) : NSSet<UIScene>;
 	function get_connectedScenes():NSSet<UIScene>;
@@ -127,6 +129,7 @@ import hxmc.objc.Selector;
 	function endBackgroundTask(identifier:I64):Void;
 	@:deprecated
 	function setMinimumBackgroundFetchInterval(minimumBackgroundFetchInterval:Float):Void;
+	@:hxmc.available(ios >= 17.0, maccatalyst >= 17.0)
 	function activateSceneSessionForRequest(request:UISceneSessionActivationRequest, errorHandler:Null<NSError -> Void>):Void;
 	function requestSceneSessionActivation(sceneSession:Null<UISceneSession>, userActivity:Null<NSUserActivity>, options:Null<UISceneActivationRequestOptions>, errorHandler:Null<NSError -> Void>):Void;
 	function requestSceneSessionDestruction(sceneSession:UISceneSession, options:Null<UISceneDestructionRequestOptions>, errorHandler:Null<NSError -> Void>):Void;

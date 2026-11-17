@@ -3,11 +3,13 @@ package uikit;
 
 import objc.NSObject;
 
-@:hxmc.framework("UIKit") @:hxmc.objc extern class UIWindowSceneDragInteraction extends NSObject implements UIInteraction {
+@:hxmc.framework("UIKit") @:hxmc.objc @:hxmc.available(ios >= 17.0, maccatalyst >= 17.0) extern class UIWindowSceneDragInteraction extends NSObject implements UIInteraction {
+	@:hxmc.available(ios >= 17.0, maccatalyst >= 17.0)
 	static function alloc():UIWindowSceneDragInteraction;
 	var view(get, never) : Null<UIView>;
 	function get_view():Null<UIView>;
 	function willMoveToView(view:Null<UIView>):Void;
 	function didMoveToView(view:Null<UIView>):Void;
+	@:hxmc.available(ios >= 17.0, maccatalyst >= 17.0)
 	override function init():UIWindowSceneDragInteraction;
 }

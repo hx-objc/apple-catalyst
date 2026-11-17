@@ -30,8 +30,11 @@ import uikit.UIView;
 	var paletteLabel(get, set) : NSStringArg;
 	function get_paletteLabel():NSStringArg;
 	function set_paletteLabel(v:NSStringArg):NSStringArg;
+	@:hxmc.available(macos >= 13.0)
 	var possibleLabels(get, set) : NSSet<NSString>;
+	@:hxmc.available(macos >= 13.0)
 	function get_possibleLabels():NSSet<NSString>;
+	@:hxmc.available(macos >= 13.0)
 	function set_possibleLabels(v:NSSet<NSString>):NSSet<NSString>;
 	var toolTip(get, set) : Null<NSStringArg>;
 	function get_toolTip():Null<NSStringArg>;
@@ -59,22 +62,36 @@ import uikit.UIView;
 	@:selector("isBordered")
 	function get_bordered():Bool;
 	function set_bordered(v:Bool):Bool;
+	@:hxmc.available(ios >= 26.0, maccatalyst >= 26.0)
 	var backgroundTintColor(get, set) : Null<UIColor>;
+	@:hxmc.available(ios >= 26.0, maccatalyst >= 26.0)
 	function get_backgroundTintColor():Null<UIColor>;
+	@:hxmc.available(ios >= 26.0, maccatalyst >= 26.0)
 	function set_backgroundTintColor(v:Null<UIColor>):Null<UIColor>;
+	@:hxmc.available(macos >= 26.0, ios >= 26.0, maccatalyst >= 26.0)
 	var style(get, set) : NSToolbarItemStyle;
+	@:hxmc.available(macos >= 26.0, ios >= 26.0, maccatalyst >= 26.0)
 	function get_style():NSToolbarItemStyle;
+	@:hxmc.available(macos >= 26.0, ios >= 26.0, maccatalyst >= 26.0)
 	function set_style(v:NSToolbarItemStyle):NSToolbarItemStyle;
+	@:hxmc.available(macos >= 11.0)
 	var navigational(get, set) : Bool;
 	@:selector("isNavigational")
+	@:hxmc.available(macos >= 11.0)
 	function get_navigational():Bool;
+	@:hxmc.available(macos >= 11.0)
 	function set_navigational(v:Bool):Bool;
+	@:hxmc.available(macos >= 12.0, ios >= 16.0, maccatalyst >= 16.0)
 	var visible(get, never) : Bool;
 	@:selector("isVisible")
+	@:hxmc.available(macos >= 12.0, ios >= 16.0, maccatalyst >= 16.0)
 	function get_visible():Bool;
+	@:hxmc.available(macos >= 15.0, ios >= 18.0, maccatalyst >= 18.0)
 	var hidden(get, set) : Bool;
 	@:selector("isHidden")
+	@:hxmc.available(macos >= 15.0, ios >= 18.0, maccatalyst >= 18.0)
 	function get_hidden():Bool;
+	@:hxmc.available(macos >= 15.0, ios >= 18.0, maccatalyst >= 18.0)
 	function set_hidden(v:Bool):Bool;
 	var visibilityPriority(get, set) : I64;
 	function get_visibilityPriority():I64;
@@ -93,6 +110,7 @@ import uikit.UIView;
 	static function itemWithItemIdentifier(itemIdentifier:NSStringArg, barButtonItem:UIBarButtonItem):NSToolbarItem;
 	function copyWithZone(zone:Ptr):Id;
 	@:hxmc.framework("UIKit")
+	@:hxmc.available(ios >= 17.0, maccatalyst >= 17.0)
 	function frameInView(referenceView:UIView):CGRect;
 	override function init():NSToolbarItem;
 }

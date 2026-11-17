@@ -23,6 +23,7 @@ import objc.NSObjectProtocol;
 	@:optional
 	function textFieldShouldChangeCharactersInRangeReplacementString(textField:UITextField, shouldChangeCharactersInRange:NSRange, replacementString:NSStringArg):Bool;
 	@:selector("textField:shouldChangeCharactersInRanges:replacementString:")
+	@:hxmc.available(ios >= 26.0, maccatalyst >= 26.0)
 	@:optional
 	function textFieldShouldChangeCharactersInRangesReplacementString(textField:UITextField, shouldChangeCharactersInRanges:NSArray<NSValue>, replacementString:NSStringArg):Bool;
 	@:optional
@@ -32,15 +33,19 @@ import objc.NSObjectProtocol;
 	@:optional
 	function textFieldShouldReturn(textField:UITextField):Bool;
 	@:selector("textField:editMenuForCharactersInRange:suggestedActions:")
+	@:hxmc.available(ios >= 16.0, maccatalyst >= 16.0)
 	@:optional
 	function textFieldEditMenuForCharactersInRangeSuggestedActions(textField:UITextField, editMenuForCharactersInRange:NSRange, suggestedActions:NSArray<UIMenuElement>):Null<UIMenu>;
 	@:selector("textField:editMenuForCharactersInRanges:suggestedActions:")
+	@:hxmc.available(ios >= 26.0, maccatalyst >= 26.0)
 	@:optional
 	function textFieldEditMenuForCharactersInRangesSuggestedActions(textField:UITextField, editMenuForCharactersInRanges:NSArray<NSValue>, suggestedActions:NSArray<UIMenuElement>):Null<UIMenu>;
 	@:selector("textField:willPresentEditMenuWithAnimator:")
+	@:hxmc.available(ios >= 16.0, maccatalyst >= 16.0)
 	@:optional
 	function textFieldWillPresentEditMenuWithAnimator(textField:UITextField, willPresentEditMenuWithAnimator:UIEditMenuInteractionAnimating):Void;
 	@:selector("textField:willDismissEditMenuWithAnimator:")
+	@:hxmc.available(ios >= 16.0, maccatalyst >= 16.0)
 	@:optional
 	function textFieldWillDismissEditMenuWithAnimator(textField:UITextField, willDismissEditMenuWithAnimator:UIEditMenuInteractionAnimating):Void;
 }

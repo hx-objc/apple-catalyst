@@ -7,21 +7,37 @@ import foundation.NSString;
 import hxmc.unsafe.Ptr;
 import objc.NSObject;
 
-@:hxmc.framework("CoreMediaIO") @:hxmc.objc extern class CMIOExtensionProvider extends NSObject {
+@:hxmc.framework("CoreMediaIO") @:hxmc.objc @:hxmc.available(macos >= 12.3, maccatalyst >= 15.4) extern class CMIOExtensionProvider extends NSObject {
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	static function alloc():CMIOExtensionProvider;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	var source(get, never) : Null<CMIOExtensionProviderSource>;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	function get_source():Null<CMIOExtensionProviderSource>;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	var clientQueue(get, never) : NSObject;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	function get_clientQueue():NSObject;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	var connectedClients(get, never) : NSArray<CMIOExtensionClient>;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	function get_connectedClients():NSArray<CMIOExtensionClient>;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	var devices(get, never) : NSArray<CMIOExtensionDevice>;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	function get_devices():NSArray<CMIOExtensionDevice>;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	static function startServiceWithProvider(provider:CMIOExtensionProvider):Void;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	static function providerWithSource(source:CMIOExtensionProviderSource, clientQueue:Null<NSObject>):CMIOExtensionProvider;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	function initWithSource(source:CMIOExtensionProviderSource, clientQueue:Null<NSObject>):CMIOExtensionProvider;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	function addDevice(device:CMIOExtensionDevice, error:Ptr):Bool;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	function removeDevice(device:CMIOExtensionDevice, error:Ptr):Bool;
+	@:hxmc.available(macos >= 12.3, maccatalyst >= 15.4)
 	function notifyPropertiesChanged(propertyStates:NSDictionary<NSString, CMIOExtensionPropertyState>):Void;
+	@:hxmc.available(macos >= 14.0, maccatalyst >= 17.0)
 	static function ignoreSIGTERM():Void;
 }

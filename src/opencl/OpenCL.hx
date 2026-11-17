@@ -2,39 +2,69 @@
 package opencl;
 
 import hxmc.I64;
+import hxmc.ReadOnlySpan;
+import hxmc.Span;
 import hxmc.unsafe.CString;
 import hxmc.unsafe.Ptr;
 import iosurface.IOSurface;
 import objc.NSObject;
 
 @:hxmc.c @:hxmc.framework("OpenCL") extern class OpenCL {
-	public static function clBuildProgram(p0:Ptr, p1:Int, p2:Ptr, p3:CString, p4:Ptr, p5:Ptr):Int;
-	public static function clCompileProgram(p0:Ptr, p1:Int, p2:Ptr, p3:CString, p4:Int, p5:Ptr, p6:Ptr, p7:Ptr, p8:Ptr):Int;
-	public static function clCreateBuffer(p0:Ptr, p1:I64, p2:I64, p3:Ptr, p4:Ptr):Ptr;
-	public static function clCreateCommandQueue(p0:Ptr, p1:Ptr, p2:I64, p3:Ptr):Ptr;
-	public static function clCreateCommandQueueWithPropertiesAPPLE(p0:Ptr, p1:Ptr, p2:Ptr, p3:Ptr):Ptr;
-	public static function clCreateContext(p0:Ptr, p1:Int, p2:Ptr, p3:Ptr, p4:Ptr, p5:Ptr):Ptr;
-	public static function clCreateContextAndCommandQueueAPPLE(p0:Ptr, p1:Int, p2:Ptr, p3:Ptr, p4:Ptr, p5:I64, p6:Ptr, p7:Ptr):Int;
-	public static function clCreateContextFromType(p0:Ptr, p1:I64, p2:Ptr, p3:Ptr, p4:Ptr):Ptr;
+	public static function clBuildProgram(p0:Ptr, p1:Int, p2:Ptr, p3:CString, p4:(Ptr, Ptr) -> Void, p5:Ptr):Int;
+	public static function clCompileProgram(p0:Ptr, p1:Int, p2:Ptr, p3:CString, p4:Int, p5:Ptr, p6:Ptr, p7:(Ptr, Ptr) -> Void, p8:Ptr):Int;
+	@:hxmc.len(p4, 1)
+	public static function clCreateBuffer(p0:Ptr, p1:I64, p2:I64, p3:Ptr, p4:Span<Int>):Ptr;
+	@:hxmc.len(p3, 1)
+	public static function clCreateCommandQueue(p0:Ptr, p1:Ptr, p2:I64, p3:Span<Int>):Ptr;
+	@:hxmc.len(p3, 1)
+	public static function clCreateCommandQueueWithPropertiesAPPLE(p0:Ptr, p1:Ptr, p2:Ptr, p3:Span<Int>):Ptr;
+	@:hxmc.len(p5, 1)
+	public static function clCreateContext(p0:Ptr, p1:Int, p2:Ptr, p3:(CString, Ptr, I64, Ptr) -> Void, p4:Ptr, p5:Span<Int>):Ptr;
+	public static function clCreateContextAndCommandQueueAPPLE(p0:Ptr, p1:Int, p2:Ptr, p3:(CString, Ptr, I64, Ptr) -> Void, p4:Ptr, p5:I64, p6:Ptr, p7:Ptr):Int;
+	@:hxmc.len(p4, 1)
+	public static function clCreateContextFromType(p0:Ptr, p1:I64, p2:(CString, Ptr, I64, Ptr) -> Void, p3:Ptr, p4:Span<Int>):Ptr;
 	public static function clCreateDAGAPPLE(c:Ptr):Ptr;
-	public static function clCreateEventFromGLsyncKHR(p0:Ptr, p1:Ptr, p2:Ptr):Ptr;
-	public static function clCreateFromGLBuffer(p0:Ptr, p1:I64, p2:Int, p3:Ptr):Ptr;
-	public static function clCreateFromGLRenderbuffer(p0:Ptr, p1:I64, p2:Int, p3:Ptr):Ptr;
-	public static function clCreateFromGLTexture(p0:Ptr, p1:I64, p2:Int, p3:Int, p4:Int, p5:Ptr):Ptr;
-	public static function clCreateImage(p0:Ptr, p1:I64, p2:Ptr, p3:Ptr, p4:Ptr, p5:Ptr):Ptr;
-	public static function clCreateImageFromIOSurface2DAPPLE(p0:Ptr, p1:I64, p2:Ptr, p3:I64, p4:I64, p5:IOSurface, p6:Ptr):Ptr;
-	public static function clCreateImageFromIOSurfaceWithPropertiesAPPLE(p0:Ptr, p1:I64, p2:Ptr, p3:Ptr, p4:Ptr, p5:Ptr):Ptr;
-	public static function clCreateKernel(p0:Ptr, p1:CString, p2:Ptr):Ptr;
+	@:hxmc.len(p2, 1)
+	public static function clCreateEventFromGLsyncKHR(p0:Ptr, p1:Ptr, p2:Span<Int>):Ptr;
+	@:hxmc.len(p3, 1)
+	public static function clCreateFromGLBuffer(p0:Ptr, p1:I64, p2:Int, p3:Span<Int>):Ptr;
+	@:hxmc.len(p3, 1)
+	public static function clCreateFromGLRenderbuffer(p0:Ptr, p1:I64, p2:Int, p3:Span<Int>):Ptr;
+	@:hxmc.len(p5, 1)
+	public static function clCreateFromGLTexture(p0:Ptr, p1:I64, p2:Int, p3:Int, p4:Int, p5:Span<Int>):Ptr;
+	@:hxmc.len(p2, 1)
+	@:hxmc.len(p3, 1)
+	@:hxmc.len(p5, 1)
+	public static function clCreateImage(p0:Ptr, p1:I64, p2:ReadOnlySpan<Cl_image_format>, p3:ReadOnlySpan<Cl_image_desc>, p4:Ptr, p5:Span<Int>):Ptr;
+	@:hxmc.len(p2, 1)
+	@:hxmc.len(p6, 1)
+	public static function clCreateImageFromIOSurface2DAPPLE(p0:Ptr, p1:I64, p2:ReadOnlySpan<Cl_image_format>, p3:I64, p4:I64, p5:IOSurface, p6:Span<Int>):Ptr;
+	@:hxmc.len(p2, 1)
+	@:hxmc.len(p3, 1)
+	@:hxmc.len(p4, 1)
+	@:hxmc.len(p5, 1)
+	public static function clCreateImageFromIOSurfaceWithPropertiesAPPLE(p0:Ptr, p1:I64, p2:ReadOnlySpan<Cl_image_format>, p3:ReadOnlySpan<Cl_image_desc>, p4:Span<I64>, p5:Span<Int>):Ptr;
+	@:hxmc.len(p2, 1)
+	public static function clCreateKernel(p0:Ptr, p1:CString, p2:Span<Int>):Ptr;
 	public static function clCreateKernelFromDAGAPPLE(d:Ptr, n:Int, list:Ptr):Ptr;
-	public static function clCreateKernelsInProgram(p0:Ptr, p1:Int, p2:Ptr, p3:Ptr):Int;
+	@:hxmc.len(p3, 1)
+	public static function clCreateKernelsInProgram(p0:Ptr, p1:Int, p2:Ptr, p3:Span<Int>):Int;
 	public static function clCreateProgramAndKernelsWithSourceAPPLE(p0:Ptr, p1:Int, p2:Ptr, p3:Ptr, p4:Int, p5:Ptr, p6:CString, p7:Int, p8:Ptr, p9:Ptr, p10:Ptr):Int;
-	public static function clCreateProgramWithBinary(p0:Ptr, p1:Int, p2:Ptr, p3:Ptr, p4:Ptr, p5:Ptr, p6:Ptr):Ptr;
-	public static function clCreateProgramWithBuiltInKernels(p0:Ptr, p1:Int, p2:Ptr, p3:CString, p4:Ptr):Ptr;
-	public static function clCreateProgramWithSource(p0:Ptr, p1:Int, p2:Ptr, p3:Ptr, p4:Ptr):Ptr;
-	public static function clCreateSampler(p0:Ptr, p1:Int, p2:Int, p3:Int, p4:Ptr):Ptr;
-	public static function clCreateSubBuffer(p0:Ptr, p1:I64, p2:Int, p3:Ptr, p4:Ptr):Ptr;
-	public static function clCreateSubDevices(p0:Ptr, p1:Ptr, p2:Int, p3:Ptr, p4:Ptr):Int;
-	public static function clCreateUserEvent(p0:Ptr, p1:Ptr):Ptr;
+	@:hxmc.len(p5, 1)
+	@:hxmc.len(p6, 1)
+	public static function clCreateProgramWithBinary(p0:Ptr, p1:Int, p2:Ptr, p3:Ptr, p4:Ptr, p5:Span<Int>, p6:Span<Int>):Ptr;
+	@:hxmc.len(p4, 1)
+	public static function clCreateProgramWithBuiltInKernels(p0:Ptr, p1:Int, p2:Ptr, p3:CString, p4:Span<Int>):Ptr;
+	@:hxmc.len(p4, 1)
+	public static function clCreateProgramWithSource(p0:Ptr, p1:Int, p2:Ptr, p3:Ptr, p4:Span<Int>):Ptr;
+	@:hxmc.len(p4, 1)
+	public static function clCreateSampler(p0:Ptr, p1:Int, p2:Int, p3:Int, p4:Span<Int>):Ptr;
+	@:hxmc.len(p4, 1)
+	public static function clCreateSubBuffer(p0:Ptr, p1:I64, p2:Int, p3:Ptr, p4:Span<Int>):Ptr;
+	@:hxmc.len(p4, 1)
+	public static function clCreateSubDevices(p0:Ptr, p1:Ptr, p2:Int, p3:Ptr, p4:Span<Int>):Int;
+	@:hxmc.len(p1, 1)
+	public static function clCreateUserEvent(p0:Ptr, p1:Span<Int>):Ptr;
 	public static function clEnqueueAcquireGLObjects(p0:Ptr, p1:Int, p2:Ptr, p3:Int, p4:Ptr, p5:Ptr):Int;
 	public static function clEnqueueBarrierWithWaitList(p0:Ptr, p1:Int, p2:Ptr, p3:Ptr):Int;
 	public static function clEnqueueCopyBuffer(p0:Ptr, p1:Ptr, p2:Ptr, p3:I64, p4:I64, p5:I64, p6:Int, p7:Ptr, p8:Ptr):Int;
@@ -44,12 +74,16 @@ import objc.NSObject;
 	public static function clEnqueueCopyImageToBuffer(p0:Ptr, p1:Ptr, p2:Ptr, p3:Ptr, p4:Ptr, p5:I64, p6:Int, p7:Ptr, p8:Ptr):Int;
 	public static function clEnqueueFillBuffer(p0:Ptr, p1:Ptr, p2:Ptr, p3:I64, p4:I64, p5:I64, p6:Int, p7:Ptr, p8:Ptr):Int;
 	public static function clEnqueueFillImage(p0:Ptr, p1:Ptr, p2:Ptr, p3:Ptr, p4:Ptr, p5:Int, p6:Ptr, p7:Ptr):Int;
-	public static function clEnqueueMapBuffer(p0:Ptr, p1:Ptr, p2:Int, p3:I64, p4:I64, p5:I64, p6:Int, p7:Ptr, p8:Ptr, p9:Ptr):Ptr;
-	public static function clEnqueueMapImage(p0:Ptr, p1:Ptr, p2:Int, p3:I64, p4:Ptr, p5:Ptr, p6:Ptr, p7:Ptr, p8:Int, p9:Ptr, p10:Ptr, p11:Ptr):Ptr;
+	@:hxmc.len(p9, 1)
+	public static function clEnqueueMapBuffer(p0:Ptr, p1:Ptr, p2:Int, p3:I64, p4:I64, p5:I64, p6:Int, p7:Ptr, p8:Ptr, p9:Span<Int>):Ptr;
+	@:hxmc.len(p6, 1)
+	@:hxmc.len(p7, 1)
+	@:hxmc.len(p11, 1)
+	public static function clEnqueueMapImage(p0:Ptr, p1:Ptr, p2:Int, p3:I64, p4:Ptr, p5:Ptr, p6:Span<I64>, p7:Span<I64>, p8:Int, p9:Ptr, p10:Ptr, p11:Span<Int>):Ptr;
 	public static function clEnqueueMarkerWithWaitList(p0:Ptr, p1:Int, p2:Ptr, p3:Ptr):Int;
 	public static function clEnqueueMigrateMemObjects(p0:Ptr, p1:Int, p2:Ptr, p3:I64, p4:Int, p5:Ptr, p6:Ptr):Int;
 	public static function clEnqueueNDRangeKernel(p0:Ptr, p1:Ptr, p2:Int, p3:Ptr, p4:Ptr, p5:Ptr, p6:Int, p7:Ptr, p8:Ptr):Int;
-	public static function clEnqueueNativeKernel(p0:Ptr, p1:Ptr, p2:Ptr, p3:I64, p4:Int, p5:Ptr, p6:Ptr, p7:Int, p8:Ptr, p9:Ptr):Int;
+	public static function clEnqueueNativeKernel(p0:Ptr, p1:Ptr -> Void, p2:Ptr, p3:I64, p4:Int, p5:Ptr, p6:Ptr, p7:Int, p8:Ptr, p9:Ptr):Int;
 	public static function clEnqueueReadBuffer(p0:Ptr, p1:Ptr, p2:Int, p3:I64, p4:I64, p5:Ptr, p6:Int, p7:Ptr, p8:Ptr):Int;
 	public static function clEnqueueReadBufferRect(p0:Ptr, p1:Ptr, p2:Int, p3:Ptr, p4:Ptr, p5:Ptr, p6:I64, p7:I64, p8:I64, p9:I64, p10:Ptr, p11:Int, p12:Ptr, p13:Ptr):Int;
 	public static function clEnqueueReadImage(p0:Ptr, p1:Ptr, p2:Int, p3:Ptr, p4:Ptr, p5:I64, p6:I64, p7:Ptr, p8:Int, p9:Ptr, p10:Ptr):Int;
@@ -61,29 +95,52 @@ import objc.NSObject;
 	public static function clEnqueueWriteImage(p0:Ptr, p1:Ptr, p2:Int, p3:Ptr, p4:Ptr, p5:I64, p6:I64, p7:Ptr, p8:Int, p9:Ptr, p10:Ptr):Int;
 	public static function clFinish(p0:Ptr):Int;
 	public static function clFlush(p0:Ptr):Int;
-	public static function clGetCommandQueueInfo(p0:Ptr, p1:Int, p2:I64, p3:Ptr, p4:Ptr):Int;
-	public static function clGetContextInfo(p0:Ptr, p1:Int, p2:I64, p3:Ptr, p4:Ptr):Int;
+	@:hxmc.len(p4, 1)
+	public static function clGetCommandQueueInfo(p0:Ptr, p1:Int, p2:I64, p3:Ptr, p4:Span<I64>):Int;
+	@:hxmc.len(p4, 1)
+	public static function clGetContextInfo(p0:Ptr, p1:Int, p2:I64, p3:Ptr, p4:Span<I64>):Int;
 	public static function clGetDAGNodeAPPLE(d:Ptr, f:Ptr, args:Ptr, arg_indices:Ptr, nargs:Int):Int;
-	public static function clGetDeviceIDs(p0:Ptr, p1:I64, p2:Int, p3:Ptr, p4:Ptr):Int;
-	public static function clGetDeviceInfo(p0:Ptr, p1:Int, p2:I64, p3:Ptr, p4:Ptr):Int;
-	public static function clGetEventInfo(p0:Ptr, p1:Int, p2:I64, p3:Ptr, p4:Ptr):Int;
-	public static function clGetEventProfilingInfo(p0:Ptr, p1:Int, p2:I64, p3:Ptr, p4:Ptr):Int;
+	@:hxmc.len(p4, 1)
+	public static function clGetDeviceIDs(p0:Ptr, p1:I64, p2:Int, p3:Ptr, p4:Span<Int>):Int;
+	@:hxmc.len(p4, 1)
+	public static function clGetDeviceInfo(p0:Ptr, p1:Int, p2:I64, p3:Ptr, p4:Span<I64>):Int;
+	@:hxmc.len(p4, 1)
+	public static function clGetEventInfo(p0:Ptr, p1:Int, p2:I64, p3:Ptr, p4:Span<I64>):Int;
+	@:hxmc.len(p4, 1)
+	public static function clGetEventProfilingInfo(p0:Ptr, p1:Int, p2:I64, p3:Ptr, p4:Span<I64>):Int;
 	public static function clGetExtensionFunctionAddressForPlatform(p0:Ptr, p1:CString):Ptr;
-	public static function clGetGLContextInfoAPPLE(p0:Ptr, p1:Ptr, p2:Int, p3:I64, p4:Ptr, p5:Ptr):Int;
-	public static function clGetGLObjectInfo(p0:Ptr, p1:Ptr, p2:Ptr):Int;
-	public static function clGetGLTextureInfo(p0:Ptr, p1:Int, p2:I64, p3:Ptr, p4:Ptr):Int;
-	public static function clGetImageInfo(p0:Ptr, p1:Int, p2:I64, p3:Ptr, p4:Ptr):Int;
-	public static function clGetKernelArgInfo(p0:Ptr, p1:Int, p2:Int, p3:I64, p4:Ptr, p5:Ptr):Int;
-	public static function clGetKernelInfo(p0:Ptr, p1:Int, p2:I64, p3:Ptr, p4:Ptr):Int;
-	public static function clGetKernelWorkGroupInfo(p0:Ptr, p1:Ptr, p2:Int, p3:I64, p4:Ptr, p5:Ptr):Int;
-	public static function clGetMemObjectInfo(p0:Ptr, p1:Int, p2:I64, p3:Ptr, p4:Ptr):Int;
-	public static function clGetPlatformIDs(p0:Int, p1:Ptr, p2:Ptr):Int;
-	public static function clGetPlatformInfo(p0:Ptr, p1:Int, p2:I64, p3:Ptr, p4:Ptr):Int;
-	public static function clGetProgramBuildInfo(p0:Ptr, p1:Ptr, p2:Int, p3:I64, p4:Ptr, p5:Ptr):Int;
-	public static function clGetProgramInfo(p0:Ptr, p1:Int, p2:I64, p3:Ptr, p4:Ptr):Int;
-	public static function clGetSamplerInfo(p0:Ptr, p1:Int, p2:I64, p3:Ptr, p4:Ptr):Int;
-	public static function clGetSupportedImageFormats(p0:Ptr, p1:I64, p2:Int, p3:Int, p4:Ptr, p5:Ptr):Int;
-	public static function clLinkProgram(p0:Ptr, p1:Int, p2:Ptr, p3:CString, p4:Int, p5:Ptr, p6:Ptr, p7:Ptr, p8:Ptr):Ptr;
+	@:hxmc.len(p5, 1)
+	public static function clGetGLContextInfoAPPLE(p0:Ptr, p1:Ptr, p2:Int, p3:I64, p4:Ptr, p5:Span<I64>):Int;
+	@:hxmc.len(p1, 1)
+	@:hxmc.len(p2, 1)
+	public static function clGetGLObjectInfo(p0:Ptr, p1:Span<Int>, p2:Span<Int>):Int;
+	@:hxmc.len(p4, 1)
+	public static function clGetGLTextureInfo(p0:Ptr, p1:Int, p2:I64, p3:Ptr, p4:Span<I64>):Int;
+	@:hxmc.len(p4, 1)
+	public static function clGetImageInfo(p0:Ptr, p1:Int, p2:I64, p3:Ptr, p4:Span<I64>):Int;
+	@:hxmc.len(p5, 1)
+	public static function clGetKernelArgInfo(p0:Ptr, p1:Int, p2:Int, p3:I64, p4:Ptr, p5:Span<I64>):Int;
+	@:hxmc.len(p4, 1)
+	public static function clGetKernelInfo(p0:Ptr, p1:Int, p2:I64, p3:Ptr, p4:Span<I64>):Int;
+	@:hxmc.len(p5, 1)
+	public static function clGetKernelWorkGroupInfo(p0:Ptr, p1:Ptr, p2:Int, p3:I64, p4:Ptr, p5:Span<I64>):Int;
+	@:hxmc.len(p4, 1)
+	public static function clGetMemObjectInfo(p0:Ptr, p1:Int, p2:I64, p3:Ptr, p4:Span<I64>):Int;
+	@:hxmc.len(p2, 1)
+	public static function clGetPlatformIDs(p0:Int, p1:Ptr, p2:Span<Int>):Int;
+	@:hxmc.len(p4, 1)
+	public static function clGetPlatformInfo(p0:Ptr, p1:Int, p2:I64, p3:Ptr, p4:Span<I64>):Int;
+	@:hxmc.len(p5, 1)
+	public static function clGetProgramBuildInfo(p0:Ptr, p1:Ptr, p2:Int, p3:I64, p4:Ptr, p5:Span<I64>):Int;
+	@:hxmc.len(p4, 1)
+	public static function clGetProgramInfo(p0:Ptr, p1:Int, p2:I64, p3:Ptr, p4:Span<I64>):Int;
+	@:hxmc.len(p4, 1)
+	public static function clGetSamplerInfo(p0:Ptr, p1:Int, p2:I64, p3:Ptr, p4:Span<I64>):Int;
+	@:hxmc.len(p4, 1)
+	@:hxmc.len(p5, 1)
+	public static function clGetSupportedImageFormats(p0:Ptr, p1:I64, p2:Int, p3:Int, p4:Span<Cl_image_format>, p5:Span<Int>):Int;
+	@:hxmc.len(p8, 1)
+	public static function clLinkProgram(p0:Ptr, p1:Int, p2:Ptr, p3:CString, p4:Int, p5:Ptr, p6:(Ptr, Ptr) -> Void, p7:Ptr, p8:Span<Int>):Ptr;
 	public static function clLogMessagesToStderrAPPLE(p0:CString, p1:Ptr, p2:I64, p3:Ptr):Void;
 	public static function clLogMessagesToStdoutAPPLE(p0:CString, p1:Ptr, p2:I64, p3:Ptr):Void;
 	public static function clLogMessagesToSystemLogAPPLE(p0:CString, p1:Ptr, p2:I64, p3:Ptr):Void;
@@ -104,21 +161,29 @@ import objc.NSObject;
 	public static function clRetainMemObject(p0:Ptr):Int;
 	public static function clRetainProgram(p0:Ptr):Int;
 	public static function clRetainSampler(p0:Ptr):Int;
-	public static function clSetEventCallback(p0:Ptr, p1:Int, p2:Ptr, p3:Ptr):Int;
+	public static function clSetEventCallback(p0:Ptr, p1:Int, p2:(Ptr, Int, Ptr) -> Void, p3:Ptr):Int;
 	public static function clSetKernelArg(p0:Ptr, p1:Int, p2:I64, p3:Ptr):Int;
 	public static function clSetKernelArgByNameAPPLE(p0:Ptr, p1:CString, p2:I64, p3:Ptr):Int;
 	public static function clSetKernelArgsVaListAPPLE(p0:Ptr, p1:Int, p2:Ptr):Int;
-	public static function clSetMemObjectDestructorCallback(p0:Ptr, p1:Ptr, p2:Ptr):Int;
+	public static function clSetMemObjectDestructorCallback(p0:Ptr, p1:(Ptr, Ptr) -> Void, p2:Ptr):Int;
 	public static function clSetUserEventStatus(p0:Ptr, p1:Int):Int;
 	public static function clUnloadPlatformCompiler(p0:Ptr):Int;
 	public static function clWaitForEvents(p0:Int, p1:Ptr):Int;
-	public static function gcl_copy_image(dst_image:Ptr, src_image:Ptr, dst_origin:Ptr, src_origin:Ptr, region:Ptr):Void;
-	public static function gcl_copy_image_to_ptr(dst_ptr:Ptr, src_image:Ptr, src_origin:Ptr, region:Ptr):Void;
-	public static function gcl_copy_ptr_to_image(dst_image:Ptr, src_ptr:Ptr, dst_origin:Ptr, region:Ptr):Void;
+	@:hxmc.len(dst_origin, 3)
+	@:hxmc.len(src_origin, 3)
+	@:hxmc.len(region, 3)
+	public static function gcl_copy_image(dst_image:Ptr, src_image:Ptr, dst_origin:ReadOnlySpan<I64>, src_origin:ReadOnlySpan<I64>, region:ReadOnlySpan<I64>):Void;
+	@:hxmc.len(src_origin, 3)
+	@:hxmc.len(region, 3)
+	public static function gcl_copy_image_to_ptr(dst_ptr:Ptr, src_image:Ptr, src_origin:ReadOnlySpan<I64>, region:ReadOnlySpan<I64>):Void;
+	@:hxmc.len(dst_origin, 3)
+	@:hxmc.len(region, 3)
+	public static function gcl_copy_ptr_to_image(dst_image:Ptr, src_ptr:Ptr, dst_origin:ReadOnlySpan<I64>, region:ReadOnlySpan<I64>):Void;
 	public static function gcl_create_buffer_from_ptr(ptr:Ptr):Ptr;
 	@:hxmc.retained
 	public static function gcl_create_dispatch_queue(flags:I64, device_id:Ptr):Null<NSObject>;
-	public static function gcl_create_image(image_format:Ptr, image_width:I64, image_height:I64, image_depth:I64, io_surface:Null<IOSurface>):Ptr;
+	@:hxmc.len(image_format, 1)
+	public static function gcl_create_image(image_format:ReadOnlySpan<Cl_image_format>, image_width:I64, image_height:I64, image_depth:I64, io_surface:Null<IOSurface>):Ptr;
 	public static function gcl_create_kernel_from_block(kernel_block_ptr:Ptr):Ptr;
 	public static function gcl_free(ptr:Ptr):Void;
 	public static function gcl_get_context():Ptr;
@@ -130,13 +195,18 @@ import objc.NSObject;
 	public static function gcl_gl_create_ptr_from_buffer(bufobj:Int):Ptr;
 	public static function gcl_gl_set_sharegroup(share:Ptr):Void;
 	public static function gcl_malloc(bytes:I64, host_ptr:Ptr, flags:I64):Ptr;
-	public static function gcl_map_image(image:Ptr, map_flags:I64, origin:Ptr, region:Ptr):Ptr;
+	@:hxmc.len(origin, 3)
+	@:hxmc.len(region, 3)
+	public static function gcl_map_image(image:Ptr, map_flags:I64, origin:ReadOnlySpan<I64>, region:ReadOnlySpan<I64>):Ptr;
 	public static function gcl_map_ptr(ptr:Ptr, map_flags:I64, cb:I64):Ptr;
 	public static function gcl_memcpy(dst:Ptr, src:Ptr, size:I64):Void;
-	public static function gcl_memcpy_rect(dst:Ptr, src:Ptr, dst_origin:Ptr, src_origin:Ptr, region:Ptr, dst_row_pitch:I64, dst_slice_pitch:I64, src_row_pitch:I64, src_slice_pitch:I64):Void;
+	@:hxmc.len(dst_origin, 3)
+	@:hxmc.len(src_origin, 3)
+	@:hxmc.len(region, 3)
+	public static function gcl_memcpy_rect(dst:Ptr, src:Ptr, dst_origin:ReadOnlySpan<I64>, src_origin:ReadOnlySpan<I64>, region:ReadOnlySpan<I64>, dst_row_pitch:I64, dst_slice_pitch:I64, src_row_pitch:I64, src_slice_pitch:I64):Void;
 	public static function gcl_release_image(image:Ptr):Void;
 	public static function gcl_retain_image(image:Ptr):Void;
-	public static function gcl_set_finalizer(object:Ptr, cl_pfn_finalizer:Ptr, user_data:Ptr):Void;
+	public static function gcl_set_finalizer(object:Ptr, cl_pfn_finalizer:(Ptr, Ptr) -> Void, user_data:Ptr):Void;
 	public static function gcl_start_timer():I64;
 	public static function gcl_stop_timer(t:I64):Float;
 	public static function gcl_unmap(p0:Ptr):Void;
